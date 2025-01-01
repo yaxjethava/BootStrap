@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Food Adsress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .text-shadow {
+            text-shadow: 0 0 4px rgb(203, 203, 203) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold fs-3 text-warning ms-5" href="#">Food Address</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-5 mb-2 mb-lg-0">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" aria-current="page" href="#">Category</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" aria-current="page" href="#">Card</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" aria-current="page" href="#">Account</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex me-5" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-warning" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- for slider -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item d-flex justify-content-center active">
+                <img src="https://www.tastingtable.com/img/gallery/20-delicious-indian-dishes-you-have-to-try-at-least-once/l-intro-1645057933.jpg"
+                    class="d-block w-100" style="height: 650px;" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://amritsr.com/wp-content/uploads/2020/08/Specialty-of-Indian-Cuisine.jpg"
+                    class="d-block w-100" style="height: 650px;" alt="...">
+
+            </div>
+            <div class="carousel-item">
+                <img src="https://static.vecteezy.com/system/resources/previews/026/721/935/non_2x/indian-national-food-close-up-generative-ai-photo.jpg"
+                    class="d-block w-100" style="height: 650px;" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- for tending section -->
+    <h2 class="fw-bold text-center my-5">Our Trendings</h2>
+    <div class="d-flex flex-wrap justify-content-evenly w-100">
+
+        <div class="card m-3" style="width: 28%;height: 250px;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfzGTIIkhNNhM12zKSGZcUaFMTEwWwMtuZDQ&s"
+                class="card-img" alt="..." height="100%">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Pasta</h5>
+            </div>
+        </div>
+        <div class="card m-3" style="width: 28%;height: 250px;">
+            <img src="https://blog.swiggy.com/wp-content/uploads/2024/06/Image-1_Veg-Cheese-Grilled-Sandwich-1024x538.png"
+                class="card-img" alt="..." height="100%">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Sandwich</h5>
+            </div>
+        </div>
+        <div class="card m-3" style="width: 28%;height: 250px;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaKmxOui-1M2mS-drzHhUI9ldUoHsY53YBoASEpsU_U5U9JgD-o6JU2Q5XPt39IUz__SU&usqp=CAU"
+                class="card-img" alt="..." height="100%">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Burger</h5>
+            </div>
+        </div>
+
+        <div class="card m-3" style="width: 28%;height: 250px;">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/140430115517-06-comfort-foods.jpg?q=w_1280,h_720,x_0,y_0,c_fill"
+                class="card-img" alt="..." height="100%">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Lasagna</h5>
+            </div>
+        </div>
+        <div class="card m-3" style="width: 28%;height: 250px;">
+            <img src="https://i.pinimg.com/736x/32/f9/c8/32f9c8b2f02c6c276a7b0d780dccf4bd.jpg" class="card-img"
+                alt="..." height="100%">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Dhosa</h5>
+            </div>
+        </div>
+        <div class="card m-3" style="width: 28%;height: 250px;">
+            <img src="https://i.ytimg.com/vi/xkMbJCtaaqA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDrMLgdijp9TJ92IUYugdtisp2tIw"
+                class="card-img" alt="..." height="100%">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Munchuriam</h5>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- for category section -->
+
+    <h2 class="fw-bold text-center my-5">Best Category - We Have Offers</h2>
+    <div class="d-flex flex-wrap justify-content-evenly">
+
+        <div class="card m-4" style="width: 18rem;height: 24rem;">
+            <img src="https://www.allrecipes.com/thmb/aefJMDXKqs42oAP71dQuYf_-Qdc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6776_Pizza-Dough_ddmfs_4x3_1724-fd91f26e0bd6400a9e89c6866336532b.jpg"
+                class="card-img-top" alt="..." height="45%">
+            <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
+                <h4 class="card-title fw-bold ">Pizza</h4>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="card-subtitle mb-2 d-inline text-body-secondary fs-5">&#8377;399</span>
+                        <span
+                            class="card-subtitle mb-2 text-body-secondary text-decoration-line-through">&#8377;599</span>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Size
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="#">Small</a></li>
+                                <li><a class="dropdown-item" href="#">Medium</a></li>
+                                <li><a class="dropdown-item" href="#">Large</a></li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+                <p class="card-text">Some quick recipiec and everyone love it.</p>
+                <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
+            </div>
+        </div>
+
+
+        <div class="card m-4" style="width: 18rem;height: 24rem;">
+            <img src="https://www.shutterstock.com/image-photo/burger-tomateoes-lettuce-pickles-on-600nw-2309539129.jpg"
+                class="card-img-top" alt="..." height="45%">
+            <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
+                <h4 class="card-title fw-bold ">Burger</h4>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="card-subtitle mb-2 d-inline text-body-secondary fs-5">&#8377;299</span>
+                        <span
+                            class="card-subtitle mb-2 text-body-secondary text-decoration-line-through">&#8377;349</span>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Size
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="#">Small</a></li>
+                                <li><a class="dropdown-item" href="#">Medium</a></li>
+                                <li><a class="dropdown-item" href="#">Large</a></li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+                <p class="card-text">Some quick recipiec and everyone love it.</p>
+                <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
+            </div>
+        </div>
+
+
+        <div class="card m-4" style="width: 18rem;height: 24rem;">
+            <img src="https://i0.wp.com/taylahskitchen.com/wp-content/uploads/2021/08/SpicyPeanutNoodles-2.jpg?resize=768%2C513&ssl=1"
+                class="card-img-top" alt="..." height="45%">
+            <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
+                <h4 class="card-title fw-bold ">Noodles</h4>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="card-subtitle mb-2 d-inline text-body-secondary fs-5">&#8377;199</span>
+                        <span
+                            class="card-subtitle mb-2 text-body-secondary text-decoration-line-through">&#8377;299</span>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Plate
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="#">Half</a></li>
+                                <li><a class="dropdown-item" href="#">Full</a></li>
+                                <li><a class="dropdown-item" href="#">Two</a></li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+                <p class="card-text">Some quick recipiec and everyone love it.</p>
+                <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
+            </div>
+        </div>
+
+
+        <div class="card m-4" style="width: 18rem;height: 24rem;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQccMPUXlejQDmILj00XTDqeAS7gyHmxoeJlyVqH8cAt5ABAzcuDYWmGTe8idCGC8oHbDw&usqp=CAU"
+                class="card-img-top" alt="..." height="45%">
+            <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
+                <h4 class="card-title fw-bold ">Sandwiche</h4>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="card-subtitle mb-2 d-inline text-body-secondary fs-5">&#8377;149</span>
+                        <span
+                            class="card-subtitle mb-2 text-body-secondary text-decoration-line-through">&#8377;249</span>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Plate
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="#">1</a></li>
+                                <li><a class="dropdown-item" href="#">2</a></li>
+                                <li><a class="dropdown-item" href="#">3</a></li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+                <p class="card-text">Some quick recipiec and everyone love it.</p>
+                <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
+            </div>
+        </div>
+
+
+        <div class="card m-4" style="width: 18rem;height: 24rem;">
+            <img src="https://i.pinimg.com/736x/32/f9/c8/32f9c8b2f02c6c276a7b0d780dccf4bd.jpg" class="card-img-top"
+                alt="..." height="45%">
+            <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
+                <h4 class="card-title fw-bold ">Dhosa</h4>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="card-subtitle mb-2 d-inline text-body-secondary fs-5">&#8377;99</span>
+                        <span
+                            class="card-subtitle mb-2 text-body-secondary text-decoration-line-through">&#8377;149</span>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Plate
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="#">1</a></li>
+                                <li><a class="dropdown-item" href="#">2</a></li>
+                                <li><a class="dropdown-item" href="#">3</a></li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+                <p class="card-text">Some quick recipiec and everyone love it.</p>
+                <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
+            </div>
+        </div>
+
+
+        <div class="card m-4" style="width: 18rem;height: 24rem;">
+            <img src="https://i.ytimg.com/vi/xkMbJCtaaqA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDrMLgdijp9TJ92IUYugdtisp2tIw"
+                class="card-img-top" alt="..." height="45%">
+            <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
+                <h4 class="card-title fw-bold ">Munchuriam</h4>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="card-subtitle mb-2 d-inline text-body-secondary fs-5">&#8377;149</span>
+                        <span
+                            class="card-subtitle mb-2 text-body-secondary text-decoration-line-through">&#8377;199</span>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Plate
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="#">1</a></li>
+                                <li><a class="dropdown-item" href="#">2</a></li>
+                                <li><a class="dropdown-item" href="#">3</a></li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+                <p class="card-text">Some quick recipiec and everyone love it.</p>
+                <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
+            </div>
+        </div>
+
+
+        <div class="card m-4" style="width: 18rem;height: 24rem;">
+            <img src="https://www.allrecipes.com/thmb/aefJMDXKqs42oAP71dQuYf_-Qdc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6776_Pizza-Dough_ddmfs_4x3_1724-fd91f26e0bd6400a9e89c6866336532b.jpg"
+                class="card-img-top" alt="..." height="45%">
+            <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
+                <h4 class="card-title fw-bold ">Pizza</h4>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="card-subtitle mb-2 d-inline text-body-secondary fs-5">&#8377;399</span>
+                        <span
+                            class="card-subtitle mb-2 text-body-secondary text-decoration-line-through">&#8377;599</span>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Size
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="#">Small</a></li>
+                                <li><a class="dropdown-item" href="#">Medium</a></li>
+                                <li><a class="dropdown-item" href="#">Large</a></li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+                <p class="card-text">Some quick recipiec and everyone love it.</p>
+                <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
+            </div>
+        </div>
+
+
+        <div class="card m-4" style="width: 18rem;height: 24rem;">
+            <img src="https://www.shutterstock.com/image-photo/burger-tomateoes-lettuce-pickles-on-600nw-2309539129.jpg"
+                class="card-img-top" alt="..." height="45%">
+            <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
+                <h4 class="card-title fw-bold ">Burger</h4>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="card-subtitle mb-2 d-inline text-body-secondary fs-5">&#8377;299</span>
+                        <span
+                            class="card-subtitle mb-2 text-body-secondary text-decoration-line-through">&#8377;349</span>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Size
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="#">Small</a></li>
+                                <li><a class="dropdown-item" href="#">Medium</a></li>
+                                <li><a class="dropdown-item" href="#">Large</a></li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+                <p class="card-text">Some quick recipiec and everyone love it.</p>
+                <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- for f&q section -->
+    <h2 class="fw-bold text-center my-5">Frequently asked questions</h2>
+
+    <div class="accordion accordion-flush mx-auto my-5" id="accordionFlushExample" style="width: 80%;">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    What do you have to sell?
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">We are bringing in our fold traditional, native, healthy and unique tasting
+                    sweets and snacks to be delivered at your doorstep.</div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Do you offer Cash on Delivery?
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Yes. We offer Cash on Delivery which most of the other websites don't offer.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Where are the products prepared?
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">The products are prepared at the place where they have originated from or
+                    are well known and famous. Yes, if your choice is Halwa then it is obviously from Tirunelveli
+                    District.</div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    How will my order be delivered?
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Courier companies offering the best services are roped in to deliver your
+                    products safely.</div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Are only native snacks and sweets dealt with?
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">No. All snacks and sweets that are not only native but those which have a
+                    unique taste from a particular place are also brought in our fold.</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    <div class="container my-0">
+
+        <footer class="text-white text-center text-lg-start" style="background-color: #23242a;">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!--Grid row-->
+                <div class="row mt-4">
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase mb-4">About company</h5>
+
+                        <p>
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                            voluptatum deleniti atque corrupti.
+                        </p>
+
+                        <p>
+                            Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                            molestias.
+                        </p>
+
+                        <div class="mt-4">
+                            <!-- Facebook -->
+                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <!-- Dribbble -->
+                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
+                                    class="fab fa-dribbble"></i></a>
+                            <!-- Twitter -->
+                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
+                                    class="fab fa-twitter"></i></a>
+                            <!-- Google + -->
+                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
+                                    class="fab fa-google-plus-g"></i></a>
+                            <!-- Linkedin -->
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+
+                        <div class="form-outline form-white mb-4">
+                            <input type="text" id="formControlLg" class="form-control form-control-lg">
+                            <label class="form-label" for="formControlLg" style="margin-left: 0px;">Search</label>
+                            <div class="form-notch">
+                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                <div class="form-notch-middle" style="width: 48.8px;"></div>
+                                <div class="form-notch-trailing"></div>
+                            </div>
+                        </div>
+
+                        <ul class="fa-ul" style="margin-left: 1.65em;">
+                            <li class="mb-3">
+                                <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY
+                                    10012, US</span>
+                            </li>
+                            <li class="mb-3">
+                                <span class="fa-li"><i class="fas fa-envelope"></i></span><span
+                                    class="ms-2">info@example.com</span>
+                            </li>
+                            <li class="mb-3">
+                                <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567
+                                    88</span>
+                            </li>
+                            <li class="mb-3">
+                                <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 01 234 567
+                                    89</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+                        <table class="table text-center text-white">
+                            <tbody class="font-weight-normal">
+                                <tr>
+                                    <td>Mon - Thu:</td>
+                                    <td>8am - 9pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Fri - Sat:</td>
+                                    <td>8am - 1am</td>
+                                </tr>
+                                <tr>
+                                    <td>Sunday:</td>
+                                    <td>9am - 10pm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2025 Copyright: X.X
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+    </div>
+    <!-- End of .container -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
