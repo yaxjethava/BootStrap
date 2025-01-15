@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* navbar  for mobile*/
+        #mobile-nav {
+            display: none;
+        }
+
+        #mobile-nav ul {
+            width: 40%;
+            gap: 10%;
+            justify-content: center;
+        }
+
+        #mobile-nav ul li {
+            width: 35%;
+        }
+
+        #mobile-nav .nav-icons {
+            width: 20%;
+            justify-content: space-evenly;
+        }
+
+        /* nav bar for without mobile */
+        nav {
+            position: fixed;
+            top: 0;
+            z-index: 999;
+            background-color: rgb(252, 252, 252);
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 1px 4px 0 #aeaeae;
+            margin-bottom: 5px;
+        }
+
+        .logo {
+            color: rgba(255, 217, 0, 0.765);
+
+            width: auto;
+            margin-left: 2%;
+            font-weight: bold;
+            font-size: 1.7rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+        }
+
+        nav ul li {
+            font-size: 1rem;
+            color: var(--text-color);
+            width: 25%;
+            height: 100%;
+        }
+
+        nav ul li a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--text-color);
+            width: 100%;
+            height: 100%;
+        }
+
+        nav ul li a:hover {
+            color: rgb(0, 0, 0);
+        }
+
+        .nav-icons {
+            width: 10%;
+            display: flex;
+            gap: 5px;
+            height: 100%;
+            margin: 0 2%;
+        }
+
+        .icon-box {
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+            width: 33%;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-box a {
+            color: var(--primary-color);
+        }
+
+        #card-counts,
+        #card-counts-small-divice {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            color: white;
+            font-size: 0.9rem;
+            top: 3px;
+            right: 0;
+            position: absolute;
+        }
+
+        .cart-container {
+            margin: 5rem 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cart-item {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item img {
+            max-width: 100px;
+            border-radius: 5px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .cart-item-actions {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-item-actions button {
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+            margin: 0 5px;
+            padding: 5px 10px;
+        }
+
+        .total {
+            padding: 2%;
+            box-sizing: border-box;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            z-index: 999;
+            width: 100%;
+            height: 60px;
+            background-color: rgb(255, 255, 0);
+            text-align: right;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav id="navbar_large_devices">
+            <div class="logo">
+                Achar Zone
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="">Watches</a></li>
+                <li><a href="">Blog</a></li>
+            </ul>
+            <div class="nav-icons">
+
+                <div class="icon-box">
+                    <a href="card.html">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                </div>
+                <div class="icon-box">
+                    <a href="card.html">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- nav bar for mobile -->
+        <nav id="mobile-nav">
+            <div class="logo">
+                Your Time
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="card.html">Cart</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="icon-box">
+                    <a href="card.html">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                </div>
+                <div class="icon-box">
+                    <a href="card.html">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="cart-container" id="cart-container"></div>
+
+    <div class="total" id="total-price">Total: $0</div>
+
+    <script>
+        const cartContainer = document.getElementById('cart-container');
+        const totalPriceElement = document.getElementById('total-price');
+
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        console.log(cartItems)
+      
+        function updateCart() {
+            cartContainer.innerHTML = '';
+            let total = 0;
+
+            cartItems.forEach((item, index) => {
+                const itemTotal = item.quantity * parseInt(item.price);
+                total += itemTotal;
+
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-details">
+                        <h4>${item.name}</h4>
+                        <p>Price: $${item.price}</p>
+                        <p>Total: $${itemTotal}</p>
+                    </div>
+                    <div class="cart-item-actions">
+                        <button onclick="changeQuantity(${index}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="changeQuantity(${index}, 1)">+</button>
+                    </div>
+                `;
+                cartContainer.appendChild(cartItem);
+            });
+
+            totalPriceElement.textContent = `Total: $${total}`;
+        }
+
+        function changeQuantity(index, delta) {
+            cartItems[index].quantity += delta;
+
+            if (cartItems[index].quantity <= 0) {
+                cartItems.splice(index, 1);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            updateCart();
+        }
+
+        updateCart();
+    </script>
+</body>
+
+</html>

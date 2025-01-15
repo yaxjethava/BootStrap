@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+
+  <style>
+    /* Basic styles for layout */
+    * {
+      font-family: Arial, sans-serif;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    /* navbar  for mobile*/
+    #mobile-nav {
+      display: none;
+    }
+
+    #mobile-nav ul {
+      width: 40%;
+      gap: 10%;
+      justify-content: center;
+    }
+
+    #mobile-nav ul li {
+      width: 35%;
+    }
+
+    #mobile-nav .nav-icons {
+      width: 20%;
+      justify-content: space-evenly;
+    }
+
+    /* nav bar for without mobile */
+    nav {
+      position: fixed;
+      top: 0;
+      z-index: 999;
+      background-color: rgb(252, 252, 252);
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 1px 4px 0 #aeaeae;
+      margin-bottom: 5px;
+    }
+
+    .logo {
+      color: rgba(255, 217, 0, 0.765);
+      width: auto;
+      margin-left: 2%;
+      font-weight: bold;
+      font-size: 1.7rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+    }
+
+    nav ul li {
+      font-size: 1rem;
+      color: var(--text-color);
+      width: 25%;
+      height: 100%;
+    }
+
+    nav ul li a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--text-color);
+      width: 100%;
+      height: 100%;
+    }
+
+    nav ul li a:hover {
+      color: rgb(0, 0, 0);
+    }
+
+    .nav-icons {
+      width: 10%;
+      display: flex;
+      gap: 5px;
+      height: 100%;
+      margin: 0 2%;
+    }
+
+    .icon-box {
+      cursor: pointer;
+      position: relative;
+      height: 100%;
+      width: 33%;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-box a {
+      color: var(--primary-color);
+    }
+
+    #card-counts,
+    #card-counts-small-divice {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: black;
+      color: white;
+      font-size: 0.9rem;
+      top: 3px;
+      right: 0;
+      position: absolute;
+    }
+
+
+    .product-container {
+      margin-top: 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      width: 250px;
+      height: 420px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 60%;
+      border-radius: 5px;
+    }
+    .product-card img:hover{
+      transition: 0.2s all ease-in-out;
+  scale: 1.1;
+    
+    }
+
+    .product-card select,
+    .product-card button {
+      margin-top: 10px;
+      cursor: pointer;
+
+      padding: 10px;
+      width: 100%;
+    }
+
+    .product-card select {
+      border: none;
+      background-color: rgb(232, 232, 232);
+      box-sizing: border-box;
+      border-radius: 10px;
+      width: 100%;
+      outline: none;
+    }
+
+    .product-card button {
+      background-color: rgba(255, 217, 0, 0.765);
+      font-weight: bold;
+      border-radius: 10px;
+      border: none;
+    }
+    .product-card button:hover{
+      background-color: rgba(214, 182, 0, 0.765);
+      
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav id="navbar_large_devices">
+      <div class="logo">
+        Achar Zone
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="">Watches</a></li>
+        <li><a href="">Blog</a></li>
+      </ul>
+      <div class="nav-icons">
+
+        <div class="icon-box">
+          <a href="card.html">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        </div>
+        <div class="icon-box">
+          <a href="card.html">
+            <i class="fa-solid fa-gear"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- nav bar for mobile -->
+    <nav id="mobile-nav">
+      <div class="logo">
+        Your Time
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="card.html">Cart</a></li>
+      </ul>
+      <div class="nav-icons">
+        <div class="icon-box">
+          <a href="card.html">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        </div>
+        <div class="icon-box">
+          <a href="card.html">
+            <i class="fa-solid fa-gear"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+  <div class="product-container">
+    <div class="product-card">
+      <img src="product1.jpeg" alt="Product 1">
+      <h3>Achar lime</h3>
+      <select>
+        <option value="100">250g - $100</option>
+        <option value="200">500g - $200</option>
+        <option value="350">1kg - $350</option>
+      </select>
+      <button onclick="addToCart('Achar lime', 'product1.jpeg', this.previousElementSibling.value)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="product2.jpeg" alt="Product 2">
+      <h3>Achar mango</h3>
+      <select>
+        <option value="100">250g - $100</option>
+        <option value="200">500g - $200</option>
+        <option value="350">1kg - $350</option>
+      </select>
+      <button onclick="addToCart('Achar mango', 'product2.jpeg', this.previousElementSibling.value)">Add to
+        Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="product3.jpeg" alt="Product 2">
+      <h3>Achar green chilli</h3>
+      <select>
+        <option value="100">250g - $100</option>
+        <option value="200">500g - $200</option>
+        <option value="350">1kg - $350</option>
+      </select>
+      <button onclick="addToCart('Achar green chilli', 'product3.jpeg', this.previousElementSibling.value)">Add to
+        Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="product4.jpeg" alt="Product 2">
+      <h3>Achar ginger</h3>
+      <select>
+        <option value="100">250g - $100</option>
+        <option value="200">500g - $200</option>
+        <option value="350">1kg - $350</option>
+      </select>
+      <button onclick="addToCart('Achar ginger', 'product4.jpeg', this.previousElementSibling.value)">Add to
+        Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="product1.jpeg" alt="Product 1">
+      <h3>Achar lime</h3>
+      <select>
+        <option value="100">250g - $100</option>
+        <option value="200">500g - $200</option>
+        <option value="350">1kg - $350</option>
+      </select>
+      <button onclick="addToCart('Achar lime', 'product1.jpeg', this.previousElementSibling.value)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="product2.jpeg" alt="Product 2">
+      <h3>Achar mango</h3>
+      <select>
+        <option value="100">250g - $100</option>
+        <option value="200">500g - $200</option>
+        <option value="350">1kg - $350</option>
+      </select>
+      <button onclick="addToCart('Achar mango', 'product2.jpeg', this.previousElementSibling.value)">Add to
+        Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="product3.jpeg" alt="Product 2">
+      <h3>Achar green chilli</h3>
+      <select>
+        <option value="100">250g - $100</option>
+        <option value="200">500g - $200</option>
+        <option value="350">1kg - $350</option>
+      </select>
+      <button onclick="addToCart('Achar green chilli', 'product3.jpeg', this.previousElementSibling.value)">Add to
+        Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="product4.jpeg" alt="Product 2">
+      <h3>Achar ginger</h3>
+      <select>
+        <option value="100">250g - $100</option>
+        <option value="200">500g - $200</option>
+        <option value="350">1kg - $350</option>
+      </select>
+      <button onclick="addToCart('Achar ginger', 'product4.jpeg', this.previousElementSibling.value)">Add to
+        Cart</button>
+    </div>
+    <!-- More product cards can be added similarly -->
+  </div>
+
+  <script>
+    function addToCart(name, image, price) {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      cartItems.push({ name, image, price, quantity: 1 });
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+      console.log(cartItems)
+    
+    }
+
+
+    function goToCart() {
+      window.location.href = 'cart.html';
+    }
+  </script>
+</body>
+
+</html>
