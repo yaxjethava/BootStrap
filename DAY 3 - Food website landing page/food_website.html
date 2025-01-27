@@ -11,60 +11,65 @@
         .text-shadow {
             text-shadow: 0 0 4px rgb(203, 203, 203) !important;
         }
+        .carousel-inner{
+            height: 650px !important;
+        }
+        @media (max-width:425px) {
+            .carousel-inner{
+            height:210px !important;
+        } 
+        }
     </style>
 </head>
 
 <body>
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold fs-3 text-warning ms-5" href="#">Food Address</a>
+            <a class="navbar-brand fw-bold fs-3 text-warning ms-3" href="#">Food Address</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav me-5 mb-2 mb-lg-0">
-                    <li class="nav-item mx-3">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item mx-lg-3">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
-                    <li class="nav-item mx-3">
-                        <a class="nav-link" aria-current="page" href="#">Category</a>
+                    <li class="nav-item mx-lg-3">
+                        <a class="nav-link" href="#">Category</a>
                     </li>
-                    <li class="nav-item mx-3">
-                        <a class="nav-link" aria-current="page" href="#">Card</a>
+                    <li class="nav-item mx-lg-3">
+                        <a class="nav-link" href="#">Card</a>
                     </li>
-                    <li class="nav-item mx-3">
-                        <a class="nav-link" aria-current="page" href="#">Account</a>
+                    <li class="nav-item mx-lg-3">
+                        <a class="nav-link" href="#">Account</a>
                     </li>
                 </ul>
-
-                <form class="d-flex me-5" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex mt-3 mt-lg-0" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                     <button class="btn btn-outline-warning" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
 
-
     <!-- for slider -->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner ">
+        <div class="carousel-inner">
             <div class="carousel-item d-flex justify-content-center active">
                 <img src="https://www.tastingtable.com/img/gallery/20-delicious-indian-dishes-you-have-to-try-at-least-once/l-intro-1645057933.jpg"
-                    class="d-block w-100" style="height: 650px;" alt="...">
+                    class="d-block w-100 h-100" alt="...">
             </div>
             <div class="carousel-item">
                 <img src="https://amritsr.com/wp-content/uploads/2020/08/Specialty-of-Indian-Cuisine.jpg"
-                    class="d-block w-100" style="height: 650px;" alt="...">
+                    class="d-block w-100 h-100" alt="...">
 
             </div>
             <div class="carousel-item">
                 <img src="https://static.vecteezy.com/system/resources/previews/026/721/935/non_2x/indian-national-food-close-up-generative-ai-photo.jpg"
-                    class="d-block w-100" style="height: 650px;" alt="...">
+                    class="d-block w-100 h-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
@@ -84,21 +89,21 @@
     <h2 class="fw-bold text-center my-5">Our Trendings</h2>
     <div class="d-flex flex-wrap justify-content-evenly w-100">
 
-        <div class="card m-3" style="width: 28%;height: 250px;">
+        <div class="card m-3 col-12 col-sm-4" style="height: 250px;">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfzGTIIkhNNhM12zKSGZcUaFMTEwWwMtuZDQ&s"
                 class="card-img" alt="..." height="100%">
             <div class="card-img-overlay">
                 <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Pasta</h5>
             </div>
         </div>
-        <div class="card m-3" style="width: 28%;height: 250px;">
+        <div class="card m-3 col-12 col-sm-4" style="height: 250px;">
             <img src="https://blog.swiggy.com/wp-content/uploads/2024/06/Image-1_Veg-Cheese-Grilled-Sandwich-1024x538.png"
                 class="card-img" alt="..." height="100%">
             <div class="card-img-overlay">
                 <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Sandwich</h5>
             </div>
         </div>
-        <div class="card m-3" style="width: 28%;height: 250px;">
+        <div class="card m-3 col-12 col-sm-4" style="height: 250px;">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaKmxOui-1M2mS-drzHhUI9ldUoHsY53YBoASEpsU_U5U9JgD-o6JU2Q5XPt39IUz__SU&usqp=CAU"
                 class="card-img" alt="..." height="100%">
             <div class="card-img-overlay">
@@ -106,21 +111,21 @@
             </div>
         </div>
 
-        <div class="card m-3" style="width: 28%;height: 250px;">
+        <div class="card m-3 col-12 col-sm-4" style="height: 250px;">
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/140430115517-06-comfort-foods.jpg?q=w_1280,h_720,x_0,y_0,c_fill"
                 class="card-img" alt="..." height="100%">
             <div class="card-img-overlay">
                 <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Lasagna</h5>
             </div>
         </div>
-        <div class="card m-3" style="width: 28%;height: 250px;">
+        <div class="card m-3 col-12 col-sm-4" style="height: 250px;">
             <img src="https://i.pinimg.com/736x/32/f9/c8/32f9c8b2f02c6c276a7b0d780dccf4bd.jpg" class="card-img"
                 alt="..." height="100%">
             <div class="card-img-overlay">
                 <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Dhosa</h5>
             </div>
         </div>
-        <div class="card m-3" style="width: 28%;height: 250px;">
+        <div class="card m-3 col-12 col-sm-4" style="height: 250px;">
             <img src="https://i.ytimg.com/vi/xkMbJCtaaqA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDrMLgdijp9TJ92IUYugdtisp2tIw"
                 class="card-img" alt="..." height="100%">
             <div class="card-img-overlay">
