@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+                .navbar {
+            z-index: 2;
+            width: 100%;
+            position: fixed;
+            /* height: 100vh; */
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 80px;
+            height: 100vh;
+        }
+
+        .main {
+            position: fixed;
+            top: 80px;
+            right: 0;
+            overflow-y: scroll;
+            padding-bottom: 80px;
+        }
+
+        .main::-webkit-scrollbar {
+            display: none;
+        }
+
+         .bg-active{
+            background-color: #ffffff31 !important;
+        }
+        .bg-purpul {
+            background-color: #7634F9 !important;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        canvas,
+        .chart {
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(184, 184, 184, 0.2);
+            background-color: #f1f1f11d;
+            /* box-shadow:
+                inset 20px 20px 50px rgba(186, 186, 186, 0.3),
+                inset -5px -5px 10px rgb(255, 255, 255),
+                10px 10px 15px rgba(216, 190, 255, 0.256),
+                -10px -10px 20px rgba(255, 255, 255, 0.1); */
+            box-shadow: inset 8px 8px 10px #d3c2ff68,
+                inset -5px -5px 15px rgba(255, 255, 255, 0.957),
+                5px 5px 8px #7938fb35,
+                -10px -10px 15px rgba(255, 255, 255, 0.212);
+        }
+
+        .chart-2 {
+            margin-top: 8px;
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(184, 184, 184, 0.2);
+            background-color: #f1f1f11d;
+            box-shadow: inset 8px 8px 10px #d3c2ff68,
+                inset -5px -5px 15px rgba(255, 255, 255, 0.957),
+                5px 5px 8px #7938fb35,
+                -10px -10px 15px rgba(255, 255, 255, 0.212);
+        }
+
+        /* for data box of dash board */
+        .small-data-chart {
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 0px solid #d3c1ff;
+            background-color: #d7c7ff36;
+            box-shadow: inset 8px 8px 10px #d3c2ff68,
+                inset -5px -5px 15px rgba(255, 255, 255, 0.957),
+                5px 5px 8px #7938fb35,
+                -8px -3px 10px rgba(255, 255, 255, 0.212);
+        }
+
+        #chart-main-1 {
+            /* background-color: red; */
+            display: flex;
+            justify-content: center;
+            height: 270px !important;
+            padding-left: 8px !important;
+        }
+
+        #chart1 {
+            border-radius: 15px;
+        }
+
+        #chart2 {
+            backdrop-filter: none;
+            border-radius: 0px;
+            border: none !important;
+            box-shadow: none;
+        }
+
+        #row-3 {
+            margin-top: 10px;
+        }
+
+        #chart-main-4 {
+            height: 350px;
+        }
+
+        @media (max-width:1024px) {
+            #chart-main-4 {
+                height: auto !important;
+            }
+        }
+
+        /* for more than mobile and tablete */
+        @media (max-width:767px) {
+            #chart-main-1 {
+                padding: 0 !important;
+                height: 340px !important;
+                padding: 8px !important;
+            }
+
+            #chart1 {
+                height: 100% !important;
+            }
+
+            .chart-2 {
+                width: 97%;
+                margin: 8px !important;
+                height: 270px !important;
+            }
+
+            #char-main-3 {
+                padding: 8px !important;
+            }
+
+            /* for row 3 */
+            #row-3 {
+                margin-top: 0 !important;
+                gap: 1rem;
+            }
+
+            #chart-main-4 {
+                height: 0;
+                height: auto !important;
+            }
+
+            #chart5 {
+                padding: 8px !important;
+            }
+        }
+
+        /* for mobile devices */
+        @media (max-width:426px) {
+
+
+            /* for row of chart 2 */
+            #row-2 {
+                gap: 1rem;
+                padding: 5px 8px !important;
+            }
+
+            #chart-main-1 {
+                padding: 0 !important;
+                height: 230px !important;
+            }
+
+            #chart1 {
+                height: 98% !important;
+            }
+
+            .chart-2 {
+                width: 100% !important;
+                box-sizing: border-box;
+                margin: 0 !important;
+            }
+
+            #char-main-3 {
+                padding: 0px !important;
+            }
+
+            /* for row of chart 3 */
+            #row-3 {
+                gap: 1rem;
+            }
+
+            #chart-main-4 {
+                height: auto !important;
+            }
+
+            #chart5 {
+                padding: 8px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main style="max-width: 1550px !important;">
+        <!-- for navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-purpul p-0" style="height: 80px;">
+            <div class="container-fluid px-sm-4 d-flex justify-content-between w-100">
+                <a class="navbar-brand text-warning fw-bold ms-3 fs-3" href="#">
+                    X.Cor.
+                </a>
+                <div class="menu w-50 gap-4 d-flex justify-content-end align-items-center">
+                    <a href="" class="nav-link text-light fs-4">
+                        <i class="fa-regular fa-circle-question"></i>
+                    </a>
+                    <a href="" class="nav-link text-light fs-4">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                    <a href=""
+                        class="nav-link text-light fs-4 rounded-5 overflow-hidden d-flex justify-content-center align-items-center"
+                        style="width: 50px;height: 50px;">
+                        <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                            alt="" width="100%">
+                    </a>
+                    <button type="button" class="btn btn-light ms-md-3 ms-0" aria-controls="offcanvasScrolling"
+                        data-bs-toggle="offcanvas" data-bs-target="#admin-bar">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- for slidebar admin menu offcanvas -->
+        <div class="offcanvas bg-purpul top-0" style="width: 220px;margin-top: 80px;" data-bs-backdrop="false"
+            tabindex="-1" id="admin-bar">
+            <div class="offcanvas-header">
+                <div class="d-flex gap-3 align-items-center">
+                    <div class="rounded overflow-hidden" style="width: 50px; height: 50px;">
+                        <img src="https://i.pinimg.com/736x/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg" alt="photo"
+                            height="100%" width="100%">
+                    </div>
+                    <h4 class="text-light">Rajesh Shah</h4>
+                </div>
+                <button class="btn btn-close bg-light" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body w-100">
+                <div class="navbar-nav gap-3 ">
+                    <a href="./index-dashboard.html" class="nav-link rounded-2 bg-active text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-solid fa-tv"></i> Dashboard
+                        </div>
+                    </a>
+                    <a href="./documents.html" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-regular fa-folder-open"></i> Documents
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-regular fa-calendar"></i> Schedule
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-solid fa-chart-simple"></i> Statistics
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-solid fa-users"></i> Community
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-regular fa-message"></i> Messages
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-solid fa-right-from-bracket"></i> Logout
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- main div of admin-default bar and main dashboard items -->
+        <div class="d-flex bg-white " style="height: 115vh !important;">
+            <!-- for default admin menu -->
+            <div class="side-menu d-none d-md-block col-1 col-md-1">
+                <div class="navbar-nav bg-purpul gap-4 h-100" style="width: 60px;">
+
+                    <a href="" class="d-flex align-items-center justify-content-center mt-4 mb-2">
+                        <div class="d-flex align-items-center rounded-5 overflow-hidden bg-danger"
+                            style="width: 45px; height: 45px;">
+                            <img src="https://i.pinimg.com/736x/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg"
+                                alt="photo" width="100%">
+                        </div>
+                    </a>
+
+                    <a href="./index-dashboard.html" class="bg-active nav-link text-light justify-content-center d-flex">
+                        <div class="w-50  gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-tv"></i>
+                        </div>
+                    </a>
+                    <a href="./documents.html" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-regular fa-folder-open"></i>
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-regular fa-message"></i>
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- for dashboard -->
+            <div class="main bg-white col-12 col-md-11" style="height: 100%;">
+                <!-- for first data of main page -->
+                <div class="row">
+
+                    <div class="col-xl-3 col-sm-6 col-12 p-2" style="height: 150px !important;">
+                        <div class="small-data-chart p-2 gap-5 d-flex h-100">
+                            <div class="w-50  p-2 d-flex flex-column">
+                                <p class="text-secondary">Total Users</p>
+                                <h3 class="m-0 fw-bold">8796+</h3>
+                                <span style="color: #7634F9;font-size: 12px;font-weight: bold;">&#x2197; 30% +</span>
+                            </div>
+                            <div style="width: 126px;height: auto;">
+                                <div id="round-chart-users-1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12   p-2" style="height: 150px !important;">
+                        <div class="small-data-chart p-2 gap-5 d-flex h-100">
+                            <div class="w-50 p-2 d-flex flex-column">
+                                <p class="text-secondary">Active Users</p>
+                                <h3 class="m-0 fw-bold">5899+</h3>
+                                <span style="color: #f0bb1b;font-size: 12px;font-weight: bold;">&#x2197; 90% +</span>
+                            </div>
+                            <div style="width: 126px;height: auto;">
+                                <div id="round-chart-users-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12    p-2" style="height: 150px !important;">
+                        <div class="small-data-chart p-2 gap-5 d-flex h-100">
+                            <div class="w-50 p-2 d-flex flex-column">
+                                <p class="text-secondary">Total Posts</p>
+                                <h3 class="m-0 fw-bold">12546+</h3>
+                                <span style="color: #fd7e19;font-size: 12px;font-weight: bold;">&#x2197; 35% +</span>
+                            </div>
+                            <div style="width: 126px;height: auto;">
+                                <div id="round-chart-users-3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12   p-2" style="height: 150px !important;">
+                        <div class="small-data-chart p-2 gap-5 d-flex h-100">
+                            <div class="w-50 p-2 d-flex flex-column">
+                                <p class="text-secondary">Watch Time</p>
+                                <h3 class="m-0 fw-bold">9865h+</h3>
+                                <span style="color: #14c2f7;font-size: 12px;font-weight: bold;">&#x2197; %95+</span>
+                            </div>
+                            <div style="width: 126px;height: auto;">
+                                <div id="round-chart-users-4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- for first row chart -->
+                <div class="row my-2" id="row-2">
+                    <div id="chart-main-1" class="col-lg-4 col-md-6 col-12 p-2">
+                        <canvas id="chart1" class="p-2 w-100 h-100"></canvas>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 chart-2 p-2 d-flex justify-content-center "
+                        style="height: 255px !important;">
+                        <canvas id="chart2"></canvas>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-12 p-2" id="char-main-3" style="height: 270px !important;">
+                        <canvas id="chart4" class="p-2"></canvas>
+                    </div>
+                </div>
+                <!-- for second row of chart -->
+                <div class="row" id="row-3">
+                    <div id="chart-main-4" class="col-lg-8 p-2">
+                        <div id="chart5" class="chart rounded-3 p-3 w-100"></div>
+                    </div>
+                    <div class="col-lg-4 p-2" style="height: 350px;">
+                        <canvas id="chart3" class="rounded-3 p-3 w-100"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // for ring chart on user chart-1
+        const options1 = {
+            series: [70], // Value is required but will be hidden
+            chart: {
+                height: 350,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    hollow: {
+                        size: '70%', // Hollow center size
+                    },
+                    track: {
+                        strokeWidth: '8%', // Adjust ring thickness
+                        background: '#ddd', // Change track (background) color
+                    },
+                    dataLabels: {
+                        show: true,
+                        name: {
+                            show: true,
+                            offsetY: 10,
+                            color: '#555',
+                            fontSize: '13px'
+                        },
+                        value: {
+                            show: false // Hide the percentage
+                        }
+                    }
+                },
+            },
+            colors: ['#7634F9'], // Change the ring color
+            labels: ['70% +'], // Only show this label
+        };
+        const chart1 = new ApexCharts(document.querySelector("#round-chart-users-1"), options1);
+        chart1.render();
+
+
+        // for ring chart on user chart-2
+        const options2 = {
+            series: [91], // Value is required but will be hidden
+            chart: {
+                height: 350,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    hollow: {
+                        size: '70%', // Hollow center size
+                    },
+                    track: {
+                        strokeWidth: '8%', // Adjust ring thickness
+                        background: '#ddd', // Change track (background) color
+                    },
+                    dataLabels: {
+                        show: true,
+                        name: {
+                            show: true,
+                            offsetY: 10,
+                            color: '#555',
+                            fontSize: '13px'
+                        },
+                        value: {
+                            show: false // Hide the percentage
+                        }
+                    }
+                },
+            },
+            colors: ['#ffc107'], // Change the ring color
+            labels: ['90% +'], // Only show this label
+        };
+        const chart2 = new ApexCharts(document.querySelector("#round-chart-users-2"), options2);
+        chart2.render();
+
+
+        // for ring chart on user chart-2
+        const options3 = {
+            series: [35], // Value is required but will be hidden
+            chart: {
+                height: 350,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    hollow: {
+                        size: '70%', // Hollow center size
+                    },
+                    track: {
+                        strokeWidth: '8%', // Adjust ring thickness
+                        background: '#ddd', // Change track (background) color
+                    },
+                    dataLabels: {
+                        show: true,
+                        name: {
+                            show: true,
+                            offsetY: 10,
+                            color: '#555',
+                            fontSize: '13px'
+                        },
+                        value: {
+                            show: false // Hide the percentage
+                        }
+                    }
+                },
+            },
+            colors: ['#fd7e19'], // Change the ring color
+            labels: ['35% +'], // Only show this label
+        };
+        const chart3 = new ApexCharts(document.querySelector("#round-chart-users-3"), options3);
+        chart3.render();
+
+
+        // for ring chart on user chart-2
+        const options4 = {
+            series: [35], // Value is required but will be hidden
+            chart: {
+                height: 350,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    hollow: {
+                        size: '70%', // Hollow center size
+                    },
+                    track: {
+                        strokeWidth: '8%', // Adjust ring thickness
+                        background: '#ddd', // Change track (background) color
+                    },
+                    dataLabels: {
+                        show: true,
+                        name: {
+                            show: true,
+                            offsetY: 10,
+                            color: '#555',
+                            fontSize: '13px'
+                        },
+                        value: {
+                            show: false // Hide the percentage
+                        }
+                    }
+                },
+            },
+            colors: ['#14c2f7'], // Change the ring color
+            labels: ['35% +'], // Only show this label
+        };
+        const chart4 = new ApexCharts(document.querySelector("#round-chart-users-4"), options4);
+        chart4.render();
+
+
+
+        // for chart 1
+        const ctx = document.getElementById('chart1');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Income (Cr.)',
+                    data: [12, 19, 3, 5, 2, 6, 10, 15, 12, 18, 25, 18, 30, 32],
+                    backgroundColor: '#f0bb1b',
+                    borderColor: '#f0bb1b',
+                    borderWidth: 1,
+                    barThickness: 18
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        display: false,
+                        beginAtZero: true
+                    },
+                    x: {
+                        display: true,
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // for rounded chart 2
+        const ctx2 = document.getElementById('chart2');
+
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: ['Jan', 'May', 'Sep', 'Dec'],
+                datasets: [{
+                    label: 'Expences (Cr.)',
+                    data: [15, 18, 35, 32],
+                    backgroundColor: ['#FE7B8E', '#FDC75D', '#4BAFFB', '#4BEAB4'],
+                    borderColor: ['#f0bb1b', '#fd7e19', '#14c2f7', '#00a86b'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                cutout: '70%',
+                scales: {
+                    y: {
+                        display: false,
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            display: true // This removes the y-axis numbers
+                        }
+                    },
+                    x: {
+                        display: false,
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // for chart 3
+        const ctx3 = document.getElementById('chart3');
+
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                datasets: [{
+                    label: 'Growth in year (In %)',
+                    fill: true, // Enables area filling
+                    data: [12, 15, 25, 15, 23, 18, 50, 30, 35, 42],
+                    backgroundColor: 'rgba(123,187,230,0.3)',
+                    borderColor: 'rgb(200,221,243)',
+                    borderWidth: 2,
+                    tension: 0.3, // Curved lines
+                    pointBackgroundColor: 'rgba(118,52,249,0.5)' // Points color
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        display: true,
+                        grid: { display: false } // Removes x-axis grid lines
+                    },
+                    y: {
+                        display: true,
+                        beginAtZero: false,
+                        grid: { display: true }
+                    }
+                }
+            }
+        });
+        // for chart 4
+        const ctx4 = document.getElementById('chart4').getContext('2d');
+
+        const myChart1 = new Chart(ctx4, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Sales Growth (In Cr.)',
+                    data: [30, 50, 40, 60, 80, 70], // Y-axis values
+                    borderColor: 'rgba(255, 99, 132, 0.7)', // Line color
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)', // Fill color
+                    borderWidth: 1,
+                    tension: 0.4, // Curved lines
+                    fill: true, // Enables area filling
+                    pointRadius: 3, // Points size
+                    pointBackgroundColor: 'rgba(255, 99, 132, 1)' // Points color
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        display: true,
+                        grid: { display: false } // Removes x-axis grid lines
+                    },
+                    y: {
+                        display: true,
+                        beginAtZero: false,
+                        grid: { display: true }
+                    }
+                }
+            }
+        });
+
+        // for chart 5
+        //     const ctx5 = document.getElementById('chart5').getContext('2d');
+
+        //     const myChart2 = new Chart(ctx5, {
+        //         type: 'bar',
+        //         data: {
+        //             labels: ['1', '2', '3', '4', '5', '6'], // X-axis numbers
+        //             datasets: [
+        //                 {
+        //                     label: 'Value 1',
+        //                     data: [10, 20, 15, 25, 30, 20], // First bar in each column
+        //                     backgroundColor: 'rgba(255, 99, 132, 0.8)',
+        //                     borderWidth: 1
+        //                 },
+        //                 {
+        //                     label: 'Value 2',
+        //                     data: [15, 25, 20, 30, 35, 25], // Second bar in each column
+        //                     backgroundColor: 'rgba(54, 162, 235, 0.8)',
+        //                     borderWidth: 1
+        //                 }
+        //             ]
+        //         },
+        //         options: {
+        //             responsive: true,
+        //             maintainAspectRatio: false,
+        //             scales: {
+        //                 x: {
+        //                     ticks: { display: true }, // Show numbers on X-axis
+        //                     grid: { display: false } // Remove grid lines
+        //                 },
+        //                 y: {
+        //                     display: false // Hide Y-axis
+        //                 }
+        //             },
+        //             plugins: {
+        //                 legend: { display: true } // Show dataset labels
+        //             }
+        //         }
+        //     }); 
+        //
+
+        const options_chart_5 = {
+            series: [{
+                name: 'Marine Sprite',
+                data: [44, 55, 41, 37, 22, 43, 21]
+            }, {
+                name: 'Striking Calf',
+                data: [53, 32, 33, 52, 13, 43, 32]
+            }, {
+                name: 'Tank Picture',
+                data: [12, 17, 11, 9, 15, 11, 20]
+            }, {
+                name: 'Bucket Slope',
+                data: [9, 7, 18, 8, 6, 9, 4]
+            }],
+            chart: {
+                type: 'bar',
+                height: 350,
+                stacked: true,
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: true,
+                    dataLabels: {
+                        total: {
+                            enabled: false,
+                            offsetX: 0,
+                            style: {
+                                fontSize: '13px',
+                                fontWeight: 900
+                            }
+                        }
+                    }
+                },
+            },
+            stroke: {
+                width: 1,
+                colors: ['#fff']
+            },
+            title: {
+                text: 'Gross Expenss'
+            },
+            xaxis: {
+                categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
+                labels: {
+                    formatter: function (val) {
+                        return val + "K"
+                    }
+                }
+            },
+            yaxis: {
+                title: {
+                    text: 'Gross Expenss'
+                },
+            },
+            tooltip: {
+                // opacity:0,
+                y: {
+                    formatter: function (val) {
+                        return val + "K"
+                    }
+                }
+            },
+            fill: {
+                opacity: 0.7
+            },
+            legend: {
+                // display:false,
+                position: 'top',
+                horizontalAlign: 'left',
+                offsetX: 0
+            }
+        };
+
+        const chart_5 = new ApexCharts(document.querySelector("#chart5"), options_chart_5);
+        chart_5.render();
+
+
+
+    </script>
+</body>
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Dashboard</title>
+    <title>Dashboard | Statistics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,163 +20,20 @@
             margin: 0;
         }
 
-        canvas,
-        .chart {
-            width: 100%;
-            height: 100%;
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 1px solid rgba(184, 184, 184, 0.2);
-            background-color: #f1f1f11d;
-            /* box-shadow:
-                inset 20px 20px 50px rgba(186, 186, 186, 0.3),
-                inset -5px -5px 10px rgb(255, 255, 255),
-                10px 10px 15px rgba(216, 190, 255, 0.256),
-                -10px -10px 20px rgba(255, 255, 255, 0.1); */
-            box-shadow: inset 8px 8px 10px #d3c2ff68,
-                inset -5px -5px 15px rgba(255, 255, 255, 0.957),
-                5px 5px 8px #7938fb35,
-                -10px -10px 15px rgba(255, 255, 255, 0.212);
-        }
-
-        .chart-2 {
-            margin-top: 8px;
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 1px solid rgba(184, 184, 184, 0.2);
-            background-color: #f1f1f11d;
-            box-shadow: inset 8px 8px 10px #d3c2ff68,
-                inset -5px -5px 15px rgba(255, 255, 255, 0.957),
-                5px 5px 8px #7938fb35,
-                -10px -10px 15px rgba(255, 255, 255, 0.212);
-        }
-
-        /* for data box of dash board */
-        .small-data-chart {
-            width: 100%;
-            height: 100%;
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 0px solid #d3c1ff;
-            background-color: #d7c7ff36;
-            box-shadow: inset 8px 8px 10px #d3c2ff68,
-                inset -5px -5px 15px rgba(255, 255, 255, 0.957),
-                5px 5px 8px #7938fb35,
-                -8px -3px 10px rgba(255, 255, 255, 0.212);
-        }
-
-        #chart-main-1 {
-            /* background-color: red; */
-            display: flex;
-            justify-content: center;
-            height: 270px !important;
-            padding-left: 8px !important;
-        }
-
-        #chart1 {
-            border-radius: 15px;
-        }
-
-        #chart2 {
-            backdrop-filter: none;
-            border-radius: 0px;
-            border: none !important;
-            box-shadow: none;
-        }
-
-        #row-3 {
-            margin-top: 10px;
-        }
-
-        #chart-main-4 {
-            height: 350px;
-        }
+  
 
         @media (max-width:1024px) {
-            #chart-main-4 {
-                height: auto !important;
-            }
+           
         }
 
         /* for more than mobile and tablete */
         @media (max-width:767px) {
-            #chart-main-1 {
-                padding: 0 !important;
-                height: 340px !important;
-                padding: 8px !important;
-            }
 
-            #chart1 {
-                height: 100% !important;
-            }
-
-            .chart-2 {
-                width: 97%;
-                margin: 8px !important;
-                height: 270px !important;
-            }
-
-            #char-main-3 {
-                padding: 8px !important;
-            }
-
-            /* for row 3 */
-            #row-3 {
-                margin-top: 0 !important;
-                gap: 1rem;
-            }
-
-            #chart-main-4 {
-                height: 0;
-                height: auto !important;
-            }
-
-            #chart5 {
-                padding: 8px !important;
-            }
         }
 
         /* for mobile devices */
         @media (max-width:426px) {
 
-
-            /* for row of chart 2 */
-            #row-2 {
-                gap: 1rem;
-                padding: 5px 8px !important;
-            }
-
-            #chart-main-1 {
-                padding: 0 !important;
-                height: 230px !important;
-            }
-
-            #chart1 {
-                height: 98% !important;
-            }
-
-            .chart-2 {
-                width: 100% !important;
-                box-sizing: border-box;
-                margin: 0 !important;
-            }
-
-            #char-main-3 {
-                padding: 0px !important;
-            }
-
-            /* for row of chart 3 */
-            #row-3 {
-                gap: 1rem;
-            }
-
-            #chart-main-4 {
-                height: auto !important;
-            }
-
-            #chart5 {
-                padding: 8px !important;
-            }
         }
     </style>
 </head>
@@ -321,88 +178,7 @@
             </div>
 
             <!-- for dashboard -->
-            <div class="main bg-white col-12 col-md-11" style="height: 100%;">
-                <!-- for first data of main page -->
-                <div class="row">
-
-                    <div class="col-xl-3 col-sm-6 col-12 p-2" style="height: 150px !important;">
-                        <div class="small-data-chart p-2 gap-5 d-flex h-100">
-                            <div class="w-50  p-2 d-flex flex-column">
-                                <p class="text-secondary">Total Users</p>
-                                <h3 class="m-0 fw-bold">8796+</h3>
-                                <span style="color: #7634F9;font-size: 12px;font-weight: bold;">&#x2197; 30% +</span>
-                            </div>
-                            <div style="width: 126px;height: auto;">
-                                <div id="round-chart-users-1">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12   p-2" style="height: 150px !important;">
-                        <div class="small-data-chart p-2 gap-5 d-flex h-100">
-                            <div class="w-50 p-2 d-flex flex-column">
-                                <p class="text-secondary">Active Users</p>
-                                <h3 class="m-0 fw-bold">5899+</h3>
-                                <span style="color: #f0bb1b;font-size: 12px;font-weight: bold;">&#x2197; 90% +</span>
-                            </div>
-                            <div style="width: 126px;height: auto;">
-                                <div id="round-chart-users-2">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12    p-2" style="height: 150px !important;">
-                        <div class="small-data-chart p-2 gap-5 d-flex h-100">
-                            <div class="w-50 p-2 d-flex flex-column">
-                                <p class="text-secondary">Total Posts</p>
-                                <h3 class="m-0 fw-bold">12546+</h3>
-                                <span style="color: #fd7e19;font-size: 12px;font-weight: bold;">&#x2197; 35% +</span>
-                            </div>
-                            <div style="width: 126px;height: auto;">
-                                <div id="round-chart-users-3">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12   p-2" style="height: 150px !important;">
-                        <div class="small-data-chart p-2 gap-5 d-flex h-100">
-                            <div class="w-50 p-2 d-flex flex-column">
-                                <p class="text-secondary">Watch Time</p>
-                                <h3 class="m-0 fw-bold">9865h+</h3>
-                                <span style="color: #14c2f7;font-size: 12px;font-weight: bold;">&#x2197; %95+</span>
-                            </div>
-                            <div style="width: 126px;height: auto;">
-                                <div id="round-chart-users-4">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- for first row chart -->
-                <div class="row my-2" id="row-2">
-                    <div id="chart-main-1" class="col-lg-4 col-md-6 col-12 p-2">
-                        <canvas id="chart1" class="p-2 w-100 h-100"></canvas>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 chart-2 p-2 d-flex justify-content-center "
-                        style="height: 255px !important;">
-                        <canvas id="chart2"></canvas>
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-12 p-2" id="char-main-3" style="height: 270px !important;">
-                        <canvas id="chart4" class="p-2"></canvas>
-                    </div>
-                </div>
-                <!-- for second row of chart -->
-                <div class="row" id="row-3">
-                    <div id="chart-main-4" class="col-lg-8 p-2">
-                        <div id="chart5" class="chart rounded-3 p-3 w-100"></div>
-                    </div>
-                    <div class="col-lg-4 p-2" style="height: 350px;">
-                        <canvas id="chart3" class="rounded-3 p-3 w-100"></canvas>
-                    </div>
-                </div>
-            </div>
+            <div class="main bg-white col-12 col-md-11" style="height: 100%;"></div>
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>

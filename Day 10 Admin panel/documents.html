@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Documents</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+        integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .navbar {
+            z-index: 2;
+            width: 100%;
+            position: fixed;
+            /* height: 100vh; */
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 80px;
+            height: 100vh;
+        }
+
+        .main {
+            position: fixed;
+            top: 80px;
+            right: 0;
+            overflow-y: scroll;
+            padding-bottom: 80px;
+        }
+
+        .main::-webkit-scrollbar {
+            display: none;
+        }
+
+        .bg-active {
+            background-color: #ffffff31 !important;
+        }
+
+        .bg-purpul {
+            background-color: #7634F9 !important;
+        }
+
+        .folders {
+            box-shadow: 3px 3px 10px 0px #c4a6ffc4 !important
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        /*/////// for table  //////*/
+        .table-responsive {
+            padding: 2%;
+        }
+
+        .file-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .pdf {
+            background-color: #E74C3C;
+        }
+
+        .doc {
+            background-color: #3498DB;
+        }
+
+        .xls {
+            background-color: #2ECC71;
+        }
+
+        .mp4 {
+            background-color: #F39C12;
+        }
+
+        .zip {
+            background-color: #9B59B6;
+        }
+
+        .scrollable-tbody {
+            display: block;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .scrollable-tbody::-webkit-scrollbar {
+            width: 5px !important;
+            background-color: #ffffff;
+            height: 100% !important;
+        }
+
+        .scrollable-tbody::-webkit-scrollbar-thumb {
+            background-color: #7634f9c8;
+            border-radius: 5px;
+        }
+
+        table thead,
+        table tbody tr {
+            border: 0px solid rgb(255, 255, 255);
+            display: table;
+            width: 100%;
+            height: 100%;
+            table-layout: fixed;
+        }
+
+        table thead th {
+            background-color: #7634f9e1 !important;
+            color: white !important;
+        }
+
+        table tbody tr td {
+            vertical-align: middle;
+        }
+
+        .scrollable-tbody::-webkit-scrollbar-thumb {
+            width: 5px !important;
+        }
+
+        table tbody {
+
+            display: block;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        @media (max-width:1024px) {}
+
+        /* for more than mobile and tablete */
+        @media (max-width:767px) {}
+
+        /* for mobile devices */
+        @media (max-width:426px) {
+
+            /* for headings of table */
+            table thead th:nth-child(2) {
+                display: none;
+            }
+
+            table thead th:nth-child(3) {
+                width: 30% !important;
+            }
+
+            table thead th:nth-child(4) {
+                width: 25% !important;
+            }
+
+            /* for td of table */
+
+            table tbody tr td:nth-child(2) {
+                display: none;
+            }
+
+            table tbody tr td:nth-child(3) {
+                width: 30% !important;
+            }
+
+            table tbody tr td:nth-child(4) {
+                width: 25% !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main style="max-width: 1550px !important;">
+        <!-- for navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-purpul p-0" style="height: 80px;">
+            <div class="container-fluid px-sm-4 d-flex justify-content-between w-100">
+                <a class="navbar-brand text-warning fw-bold ms-3 fs-3" href="#">
+                    X.Cor.
+                </a>
+                <div class="menu w-50 gap-4 d-flex justify-content-end align-items-center">
+                    <a href="" class="nav-link text-light fs-4">
+                        <i class="fa-regular fa-circle-question"></i>
+                    </a>
+                    <a href="" class="nav-link text-light fs-4">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                    <a href=""
+                        class="nav-link text-light fs-4 rounded-5 overflow-hidden d-flex justify-content-center align-items-center"
+                        style="width: 50px;height: 50px;">
+                        <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                            alt="" width="100%">
+                    </a>
+                    <button type="button" class="btn btn-light ms-md-3 ms-0" aria-controls="offcanvasScrolling"
+                        data-bs-toggle="offcanvas" data-bs-target="#admin-bar">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- for slidebar admin menu offcanvas -->
+        <div class="offcanvas bg-purpul top-0" style="width: 220px;margin-top: 80px;" data-bs-backdrop="false"
+            tabindex="-1" id="admin-bar">
+            <div class="offcanvas-header">
+                <div class="d-flex gap-3 align-items-center">
+                    <div class="rounded overflow-hidden" style="width: 50px; height: 50px;">
+                        <img src="https://i.pinimg.com/736x/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg" alt="photo"
+                            height="100%" width="100%">
+                    </div>
+                    <h4 class="text-light">Rajesh Shah</h4>
+                </div>
+                <button class="btn btn-close bg-light" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body w-100">
+                <div class="navbar-nav gap-3 ">
+                    <a href="./index-dashboard.html" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-solid fa-tv"></i> Dashboard
+                        </div>
+                    </a>
+                    <a href="./documents.html"
+                        class="nav-link text-light rounded-2 bg-active justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-regular fa-folder-open"></i> Documents
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-regular fa-calendar"></i> Schedule
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-solid fa-chart-simple"></i> Statistics
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-solid fa-users"></i> Community
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-regular fa-message"></i> Messages
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-between">
+                            <i class="fa-solid fa-right-from-bracket"></i> Logout
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- main div of admin-default bar and main dashboard items -->
+        <div class="d-flex bg-light " style="height: 115vh !important;">
+            <!-- for default admin menu -->
+            <div class="side-menu d-none d-md-block col-1 col-md-1">
+                <div class="navbar-nav bg-purpul gap-4 h-100" style="width: 60px;">
+
+                    <a href="" class="d-flex align-items-center justify-content-center mt-4 mb-2">
+                        <div class="d-flex align-items-center rounded-5 overflow-hidden bg-danger"
+                            style="width: 45px; height: 45px;">
+                            <img src="https://i.pinimg.com/736x/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg"
+                                alt="photo" width="100%">
+                        </div>
+                    </a>
+
+                    <a href="./index-dashboard.html" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-tv"></i>
+                        </div>
+                    </a>
+                    <a href="./documents.html" class="nav-link bg-active text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-regular fa-folder-open"></i>
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-regular fa-message"></i>
+                        </div>
+                    </a>
+                    <a href="" class="nav-link text-light justify-content-center d-flex">
+                        <div class="w-50 gap-4 d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- for document dashboard -->
+            <div class="main col-12 col-md-11" style="height: 100%;">
+
+                <!-- for first row -->
+                <div class="row ">
+                    <!-- for boxes of documents -->
+                    <div class="col-xl-8">
+                        <div class="row">
+
+                            <div class="col-6 col-sm-4 col-lg-3 p-3 " style="height: 180px;">
+                                <a href="" class="nav-link folders rounded-2 bg-white h-100 p-3">
+                                    <div class="h-50 d-flex mb-1 align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center"
+                                            style="width: 50px;height: 50px;border-radius: 50%;background-color: #7563de59;color: #4b2fe9;font-size: 1.2rem;">
+                                            <i class="fa-solid fa-image"></i>
+                                        </div>
+                                    </div>
+                                    <div class="h-50">
+                                        <p class="fw-bold mt-2 mb-0">Images</p>
+                                        <span class="text-secondary m-0" style="font-size: 14px;">256 items</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-sm-4 col-lg-3 p-3 " style="height: 180px;">
+                                <a href="" class="nav-link folders rounded-2 bg-white h-100 p-3">
+                                    <div class="h-50 d-flex mb-1 align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center"
+                                            style="width: 50px;height: 50px;border-radius: 50%;background-color: #7563de59;color: #4b2fe9;font-size: 1.2rem;">
+                                            <i class="fa-solid fa-video"></i>
+                                        </div>
+                                    </div>
+                                    <div class="h-50">
+                                        <p class="fw-bold mt-2 mb-0">Videos</p>
+                                        <span class="text-secondary m-0" style="font-size: 14px;">146 items</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-sm-4 col-lg-3 p-3 " style="height: 180px;">
+                                <a href="" class="nav-link folders rounded-2 bg-white h-100 p-3">
+                                    <div class="h-50 d-flex mb-1 align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center"
+                                            style="width: 50px;height: 50px;border-radius: 50%;background-color: #7563de59;color: #4b2fe9;font-size: 1.2rem;">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </div>
+                                    </div>
+                                    <div class="h-50">
+                                        <p class="fw-bold mt-2 mb-0">Documents</p>
+                                        <span class="text-secondary m-0" style="font-size: 14px;">356 items</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-sm-4 col-lg-3 p-3 " style="height: 180px;">
+                                <a href="" class="nav-link folders rounded-2 bg-white h-100 p-3">
+                                    <div class="h-50 d-flex mb-1 align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center"
+                                            style="width: 50px;height: 50px;border-radius: 50%;background-color: #7563de59;color: #4b2fe9;font-size: 1.2rem;">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                        </div>
+                                    </div>
+                                    <div class="h-50">
+                                        <p class="fw-bold mt-2 mb-0">Audios</p>
+                                        <span class="text-secondary m-0" style="font-size: 14px;">136 items</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-sm-4 col-lg-3 p-3 " style="height: 180px;">
+                                <a href="" class="nav-link folders rounded-2 bg-white h-100 p-3">
+                                    <div class="h-50 d-flex mb-1 align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center"
+                                            style="width: 50px;height: 50px;border-radius: 50%;background-color: #7563de59;color: #4b2fe9;font-size: 1.2rem;">
+                                            <i class="fa-solid fa-circle-play"></i>
+                                        </div>
+                                    </div>
+                                    <div class="h-50">
+                                        <p class="fw-bold mt-2 mb-0">Movies</p>
+                                        <span class="text-secondary m-0" style="font-size: 14px;">96 items</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-sm-4 col-lg-3 p-3 " style="height: 180px;">
+                                <a href="" class="nav-link folders rounded-2 bg-white h-100 p-3">
+                                    <div class="h-50 d-flex mb-1 align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center"
+                                            style="width: 50px;height: 50px;border-radius: 50%;background-color: #7563de59;color: #4b2fe9;font-size: 1.2rem;">
+                                            <i class="fa-regular fa-star-half-stroke"></i>
+                                        </div>
+                                    </div>
+                                    <div class="h-50">
+                                        <p class="fw-bold mt-2 mb-0">Design</p>
+                                        <span class="text-secondary m-0" style="font-size: 14px;">86 items</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-sm-4 col-lg-3 p-3 " style="height: 180px;">
+                                <a href="" class="nav-link folders rounded-2 bg-white h-100 p-3">
+                                    <div class="h-50 d-flex mb-1 align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center"
+                                            style="width: 50px;height: 50px;border-radius: 50%;background-color: #7563de59;color: #4b2fe9;font-size: 1.2rem;">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </div>
+                                    </div>
+                                    <div class="h-50">
+                                        <p class="fw-bold mt-2 mb-0">Assignment</p>
+                                        <span class="text-secondary m-0" style="font-size: 14px;">195 items</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-sm-4 col-lg-3 p-3 " style="height: 180px;">
+                                <a href="" class="nav-link folders rounded-2 bg-white h-100 p-3">
+                                    <div class="h-50 d-flex mb-1 align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center"
+                                            style="width: 50px;height: 50px;border-radius: 50%;background-color: #7563de59;color: #4b2fe9;font-size: 1.2rem;">
+                                            <i class="fa-brands fa-uikit"></i>
+                                        </div>
+                                    </div>
+                                    <div class="h-50">
+                                        <p class="fw-bold mt-2 mb-0">UI Kit</p>
+                                        <span class="text-secondary m-0" style="font-size: 14px;">186 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- for storage details meter -->
+                    <div class="col-xl-4 p-3 ">
+                        <div class="w-100 h-100 rounded-2 p-2 bg-white folders overflow-hidden">
+
+                            <!-- for meter -->
+                            <div class="h-50">
+                                <div id="storage-used-meter" class="d-flex justify-content-center">
+                                </div>
+                            </div>
+
+                            <!-- for progess bars main parent -->
+                            <div class="h-50 gap-1 d-flex flex-column">
+
+                                <div class="bg-white p-1" style="height: 32%;">
+                                    <a href="" class="nav-link d-flex gap-2">
+                                        <div class="d-flex justify-content-center align-items-center rounded-2"
+                                            style="width: 50px;height: 43px;background-color: #7563de59;color: #4b2fe9;font-size: 1.rem;">
+                                            <i class="fa-solid fa-image"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-around px-2 flex-column w-100">
+                                            <div class="d-flex justify-content-between w-100">
+                                                <span class="text-dark">Images</span>
+                                                <span class="text-secondary ">1,114</span>
+                                            </div>
+                                            <div class="progress bg-gray w-100" style="height: 20%;">
+                                                <div class="progress-bar bg-purpul" role="progressbar"
+                                                    style="width: 65%" aria-valuenow="50" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="bg-white p-1" style="height: 32%;">
+                                    <a href="" class="nav-link d-flex gap-2">
+                                        <div class="d-flex justify-content-center align-items-center rounded-2"
+                                            style="width: 50px;height: 43px;background-color: #7563de59;color: #4b2fe9;font-size: 1.rem;">
+                                            <i class="fa-solid fa-video"></i>
+
+                                        </div>
+                                        <div class="d-flex justify-content-around px-2 flex-column w-100">
+                                            <div class="d-flex justify-content-between w-100">
+                                                <span class="text-dark">Videos</span>
+                                                <span class="text-secondary ">549</span>
+                                            </div>
+                                            <div class="progress bg- w-100" style="height: 20%;">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 23%"
+                                                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="bg-white p-1" style="height: 32%;">
+                                    <a href="" class="nav-link d-flex gap-2">
+                                        <div class="d-flex justify-content-center align-items-center rounded-2"
+                                            style="width: 50px;height: 43px;background-color: #7563de59;color: #4b2fe9;font-size: 1.rem;">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-around px-2 flex-column w-100">
+                                            <div class="d-flex justify-content-between w-100">
+                                                <span class="text-dark">Documents</span>
+                                                <span class="text-secondary ">956</span>
+                                            </div>
+                                            <div class="progress bg- w-100" style="height: 20%;">
+                                                <div class="progress-bar bg-danger" role="progressbar"
+                                                    style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- for secound row -->
+                <h3 class="m-4">Recent Files</h3>
+
+                <div class="table-responsive ">
+                    <table class="table folders table-hover" style="  overflow: hidden;border-radius: 15px;">
+
+                        <thead>
+                            <tr>
+                                <th class="p-3">File Name</th>
+                                <th class="p-3">Type</th>
+                                <th class="p-3">Last Modified</th>
+                                <th class="p-3">Size
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="scrollable-tbody table-white">
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon pdf"><i class="fas fa-file-pdf"></i></span> Report.pdf
+                                </td>
+                                <td>PDF</td>
+                                <td>2024-02-01</td>
+                                <td>1.2 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon doc"><i class="fas fa-file-word"></i></span> Document.docx
+                                </td>
+                                <td>Word</td>
+                                <td>2024-01-25</td>
+                                <td>850 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon xls"><i class="fas fa-file-excel"></i></span> Data.xlsx
+                                </td>
+                                <td>Excel</td>
+                                <td>2024-02-05</td>
+                                <td>500 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon mp4"><i class="fas fa-file-video"></i></span> Video.mp4
+                                </td>
+                                <td>Video</td>
+                                <td>2024-01-18</td>
+                                <td>10.5 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon zip"><i class="fas fa-file-archive"></i></span> Archive.zip
+                                </td>
+                                <td>ZIP</td>
+                                <td>2024-01-30</td>
+                                <td>3.2 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon pdf"><i class="fas fa-file-pdf"></i></span> Invoice.pdf
+                                </td>
+                                <td>PDF</td>
+                                <td>2024-01-10</td>
+                                <td>1.1 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon pdf"><i class="fas fa-file-pdf"></i></span> Report.pdf
+                                </td>
+                                <td>PDF</td>
+                                <td>2024-02-01</td>
+                                <td>1.2 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon doc"><i class="fas fa-file-word"></i></span> Document.docx
+                                </td>
+                                <td>Word</td>
+                                <td>2024-01-25</td>
+                                <td>850 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon xls"><i class="fas fa-file-excel"></i></span> Data.xlsx
+                                </td>
+                                <td>Excel</td>
+                                <td>2024-02-05</td>
+                                <td>500 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon mp4"><i class="fas fa-file-video"></i></span> Video.mp4
+                                </td>
+                                <td>Video</td>
+                                <td>2024-01-18</td>
+                                <td>10.5 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon zip"><i class="fas fa-file-archive"></i></span> Archive.zip
+                                </td>
+                                <td>ZIP</td>
+                                <td>2024-01-30</td>
+                                <td>3.2 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon pdf"><i class="fas fa-file-pdf"></i></span> Invoice.pdf
+                                </td>
+                                <td>PDF</td>
+                                <td>2024-01-10</td>
+                                <td>1.1 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon pdf"><i class="fas fa-file-pdf"></i></span> Report.pdf
+                                </td>
+                                <td>PDF</td>
+                                <td>2024-02-01</td>
+                                <td>1.2 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon doc"><i class="fas fa-file-word"></i></span> Document.docx
+                                </td>
+                                <td>Word</td>
+                                <td>2024-01-25</td>
+                                <td>850 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon xls"><i class="fas fa-file-excel"></i></span> Data.xlsx
+                                </td>
+                                <td>Excel</td>
+                                <td>2024-02-05</td>
+                                <td>500 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon mp4"><i class="fas fa-file-video"></i></span> Video.mp4
+                                </td>
+                                <td>Video</td>
+                                <td>2024-01-18</td>
+                                <td>10.5 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon zip"><i class="fas fa-file-archive"></i></span> Archive.zip
+                                </td>
+                                <td>ZIP</td>
+                                <td>2024-01-30</td>
+                                <td>3.2 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon pdf"><i class="fas fa-file-pdf"></i></span> Invoice.pdf
+                                </td>
+                                <td>PDF</td>
+                                <td>2024-01-10</td>
+                                <td>1.1 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon pdf"><i class="fas fa-file-pdf"></i></span> Report.pdf
+                                </td>
+                                <td>PDF</td>
+                                <td>2024-02-01</td>
+                                <td>1.2 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon doc"><i class="fas fa-file-word"></i></span> Document.docx
+                                </td>
+                                <td>Word</td>
+                                <td>2024-01-25</td>
+                                <td>850 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon xls"><i class="fas fa-file-excel"></i></span> Data.xlsx
+                                </td>
+                                <td>Excel</td>
+                                <td>2024-02-05</td>
+                                <td>500 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon mp4"><i class="fas fa-file-video"></i></span> Video.mp4
+                                </td>
+                                <td>Video</td>
+                                <td>2024-01-18</td>
+                                <td>10.5 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon zip"><i class="fas fa-file-archive"></i></span> Archive.zip
+                                </td>
+                                <td>ZIP</td>
+                                <td>2024-01-30</td>
+                                <td>3.2 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon pdf"><i class="fas fa-file-pdf"></i></span> Invoice.pdf
+                                </td>
+                                <td>PDF</td>
+                                <td>2024-01-10</td>
+                                <td>1.1 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon doc"><i class="fas fa-file-word"></i></span> Notes.docx
+                                </td>
+                                <td>Word</td>
+                                <td>2024-01-12</td>
+                                <td>650 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon xls"><i class="fas fa-file-excel"></i></span> Budget.xlsx
+                                </td>
+                                <td>Excel</td>
+                                <td>2024-02-07</td>
+                                <td>780 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon mp4"><i class="fas fa-file-video"></i></span>
+                                    Presentation.mp4
+                                </td>
+                                <td>Video</td>
+                                <td>2024-02-02</td>
+                                <td>15.3 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon zip"><i class="fas fa-file-archive"></i></span> Backup.zip
+                                </td>
+                                <td>ZIP</td>
+                                <td>2024-01-22</td>
+                                <td>5.4 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon pdf"><i class="fas fa-file-pdf"></i></span> Ebook.pdf
+                                </td>
+                                <td>PDF</td>
+                                <td>2024-01-20</td>
+                                <td>2.5 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon doc"><i class="fas fa-file-word"></i></span> Resume.docx
+                                </td>
+                                <td>Word</td>
+                                <td>2024-01-15</td>
+                                <td>400 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon xls"><i class="fas fa-file-excel"></i></span> Sales.xlsx
+                                </td>
+                                <td>Excel</td>
+                                <td>2024-02-06</td>
+                                <td>910 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon mp4"><i class="fas fa-file-video"></i></span> Tutorial.mp4
+                                </td>
+                                <td>Video</td>
+                                <td>2024-02-03</td>
+                                <td>8.7 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon zip"><i class="fas fa-file-archive"></i></span> Projects.zip
+                                </td>
+                                <td>ZIP</td>
+                                <td>2024-01-28</td>
+                                <td>6.1 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon zip"><i class="fas fa-file-archive"></i></span> Backup.zip
+                                </td>
+                                <td>ZIP</td>
+                                <td>2024-01-22</td>
+                                <td>5.4 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon pdf"><i class="fas fa-file-pdf"></i></span> Ebook.pdf
+                                </td>
+                                <td>PDF</td>
+                                <td>2024-01-20</td>
+                                <td>2.5 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon doc"><i class="fas fa-file-word"></i></span> Resume.docx
+                                </td>
+                                <td>Word</td>
+                                <td>2024-01-15</td>
+                                <td>400 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon xls"><i class="fas fa-file-excel"></i></span> Sales.xlsx
+                                </td>
+                                <td>Excel</td>
+                                <td>2024-02-06</td>
+                                <td>910 KB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon mp4"><i class="fas fa-file-video"></i></span> Tutorial.mp4
+                                </td>
+                                <td>Video</td>
+                                <td>2024-02-03</td>
+                                <td>8.7 MB</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="d-flex flex-column flex-lg-row gap-sm-2 gap-lg-4 align-items-center h-100 fw-bold">
+                                    <span class="file-icon zip"><i class="fas fa-file-archive"></i></span> Projects.zip
+                                </td>
+                                <td>ZIP</td>
+                                <td>2024-01-28</td>
+                                <td>6.1 MB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var options = {
+            series: [76],
+            chart: {
+                type: 'radialBar',
+                height: 300, // Adjust height
+                width: 300,  // Adjust width
+                offsetY: -20,
+                sparkline: {
+                    enabled: true
+                }
+            },
+            plotOptions: {
+                radialBar: {
+                    startAngle: -90,
+                    endAngle: 90,
+                    hollow: {
+                        size: "50%" // Adjust the inner circle size
+                    },
+                    track: {
+                        background: "#e9ecefc7",
+                        strokeWidth: '90%',
+                        margin: 15,
+                        dropShadow: {
+                            enabled: true,
+                            top: 2,
+                            left: 0,
+                            color: '#E9ECEF',
+                            opacity: 1,
+                            blur: 2
+                        }
+                    },
+                    dataLabels: {
+                        name: {
+                            show: true,
+                            formatter: function () { return "used of 100GB"; } // Updated label
+                        },
+                        value: {
+                            offsetY: -50,
+                            fontSize: '22px',
+                            formatter: function (val) { return val + "GB"; } // Updated value label
+                        }
+                    },
+                    bar: {
+                        roundCap: true, // Makes the ends of the bar rounded
+                        endingShape: 'round' // Ensures both ends are rounded
+                    }
+                }
+            },
+            grid: {
+                padding: {
+                    top: 0
+                }
+            },
+            fill: {
+                type: 'solid',
+                colors: ["#7634F9"],
+            },
+            labels: ['Storage Usage'], // Updated label
+        };
+
+        var chart = new ApexCharts(document.querySelector("#storage-used-meter"), options);
+        chart.render();
+
+    </script>
+</body>
+</body>
+
+</html>
