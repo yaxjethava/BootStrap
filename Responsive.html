@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        <style>
+            form{
+                width: 50%;
+            }
+            @media (max-width:768px) {
+                form{
+                    width: 80%;
+                }
+            }
+            @media (max-width:425px) {
+                form{
+                    width: 90%;
+                }
+            }
+        </style>
+    </head>
+
+<body>
+
+    <form class="my-5 mx-auto rounded bg-light p-3 shadow">
+<h3 class="text-warning  my-3 text-center">Registration form</h3>
+        <div>
+            <label class="form-label">UserName</label>
+            <input type="text" class="form-control"><br>
+        </div>
+        <div>
+            <label class="form-label">Email Id</label>
+            <input type="email" class="form-control form-control"><br>
+        </div>
+        <div>
+            <label class="form-label">Phone</label>
+            <input type="number" class="form-control form-control"><br>
+        </div>
+
+        <div>
+            <label class="form-label">City</label>
+            <select class="form-select" size="auto">
+                <option selected value="Amreli">Amreli</option>
+                <option value="Rajkot">Rajkot</option>
+                <option value="Surat">Surat</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Gandhinagar">Gandhinagar</option>
+            </select><br>
+        </div>
+        <div>
+            <label>Select Your Interest</label>
+            <div class="form-check">
+                <input type="checkbox" id="Computer" class="form-check-input">
+                <label class="form-check-label" for="Computer">Computer</label><br>
+
+                <input type="checkbox" id="Science" class="form-check-input">
+                <label class="form-check-label" for="Science">Science</label><br>
+
+                <input type="checkbox" id="Finance" class="form-check-input">
+                <label class="form-check-label" for="Finance">Finance</label><br>
+
+                <input type="checkbox" id="Psychology" class="form-check-input">
+                <label class="form-check-label" for="Psychology">Psychology</label><br>
+
+            </div>
+        </div><br>
+        <div>
+            <label>Gender</label><br>
+            <div class="form-check form-switch form-check-inline">
+                <input type="radio" id="male" role="switch" name="gender" class="form-check-input">
+                <label class="form-check-label" for="male">Male</label><br>
+            </div>
+            <div class="form-check form-switch form-check-inline">
+                <input type="radio" id="female" role="switch" name="gender" class="form-check-input">
+                <label class="form-check-label" for="female">Female</label><br>
+            </div>
+        </div><br>
+
+        <div>
+            <label for="age" class="form-label">Select Age</label>
+            <input type="range" class="form-range" min="18" max="30">
+            <div class="form-text">
+                Minimum age start from 18 and maximum age is 30.
+            </div>
+        </div>
+        <br>
+        </div>
+        <div>
+            <label class="form-label">Create Password</label>
+            <input type="password" class="form-control">
+            <div class="form-text">Your Password must be 8-25 charachters and its have Special symbols</div>
+        </div>
+<br><br>
+        <div>
+            <button class="btn btn-warning text-white col-12 fw-bold">Submit</button>
+        </div>
+    </form>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
