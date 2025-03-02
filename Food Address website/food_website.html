@@ -5,52 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Food Adsress</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        .text-shadow {
-            text-shadow: 0 0 4px rgb(203, 203, 203) !important;
-        }
+    <link rel="shortcut icon" href="food addresss.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-        .carousel-inner {
-            height: 650px !important;
-        }
-
-        .row {
-            margin: 0;
-        }
-
-        .height {
-            height: 100%;
-        }
-    
-        .blog-card {
-            background: #ffcc0031;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .blog-title {
-            color: #ff9800;
-        }
-        .blog-img {
-            height: 100%;
-            border-radius: 10px;
-        }
-        @media (max-width:425px) {
-            .carousel-inner {
-                height: 210px !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- nav bar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold fs-3 text-warning ms-3" href="#">Food Address</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -58,6 +23,7 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item mx-lg-3">
@@ -84,16 +50,16 @@
     <!-- for slider -->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item d-flex justify-content-center active">
+            <div class="carousel-item d-flex justify-content-center active h-100">
                 <img src="https://www.tastingtable.com/img/gallery/20-delicious-indian-dishes-you-have-to-try-at-least-once/l-intro-1645057933.jpg"
                     class="d-block w-100 h-100" alt="...">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item h-100">
                 <img src="https://amritsr.com/wp-content/uploads/2020/08/Specialty-of-Indian-Cuisine.jpg"
                     class="d-block w-100 h-100" alt="...">
 
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item h-100">
                 <img src="https://static.vecteezy.com/system/resources/previews/026/721/935/non_2x/indian-national-food-close-up-generative-ai-photo.jpg"
                     class="d-block w-100 h-100" alt="...">
             </div>
@@ -112,50 +78,99 @@
 
 
     <!-- for tending section -->
-    <h2 class="fw-bold text-center blog-title my-5">Our Trendings</h2>
+    <h2 class="fw-bold text-center blog-title my-5" data-aos="fade">Our Trendings</h2>
     <div class="d-flex flex-wrap justify-content-evenly w-100">
 
-        <div class="card m-3 col-12 col-sm-5 col-md-4" style="height: 250px;">
+        <div class="card-trend mx-1 my-3 col-4 col-sm-5 col-md-3 rounded-3 overflow-hidden" data-aos="fade-up"
+            data-aos-offset="100" data-aos-delay="5" data-aos-duration="900">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfzGTIIkhNNhM12zKSGZcUaFMTEwWwMtuZDQ&s"
                 class="card-img" alt="..." height="100%">
+            <img src="https://thumbs.dreamstime.com/b/creamy-chicken-penne-pasta-casserole-bowl-vegetables-cheese-cream-soup-black-dark-wood-table-landscape-view-282487443.jpg"
+                class="card-img" alt="..." height="100%">
             <div class="card-img-overlay">
-                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Pasta</h5>
+                <h5 class="card-title fs-3 fw-bold text-light">Pasta</h5>
             </div>
         </div>
-        <div class="card m-3 col-12 col-sm-5 col-md-4" style="height: 250px;">
+        <div class="card-trend mx-1 my-3 col-4 col-sm-5 col-md-3 rounded-3 overflow-hidden" data-aos="fade-up"
+            data-aos-offset="100" data-aos-delay="50" data-aos-duration="900">
             <img src="https://blog.swiggy.com/wp-content/uploads/2024/06/Image-1_Veg-Cheese-Grilled-Sandwich-1024x538.png"
                 class="card-img" alt="..." height="100%">
-            <div class="card-img-overlay">
-                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Sandwich</h5>
-            </div>
-        </div>
-        <div class="card m-3 col-12 col-sm-5 col-md-4" style="height: 250px;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaKmxOui-1M2mS-drzHhUI9ldUoHsY53YBoASEpsU_U5U9JgD-o6JU2Q5XPt39IUz__SU&usqp=CAU"
+            <img src="https://media.istockphoto.com/id/1397193477/photo/club-sandwich-made-with-bacon-ham-turkey-cheese-lettuce-and-tomato.jpg?s=612x612&w=0&k=20&c=fjNyxTEA0L88bqENs8_SKMnfAOyWlNPGxLIxz9nsSss="
                 class="card-img" alt="..." height="100%">
             <div class="card-img-overlay">
-                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Burger</h5>
+                <h5 class="card-title fs-3 fw-bold text-light">Sandwich</h5>
+            </div>
+        </div>
+        <div class="card-trend mx-1 my-3 col-4 col-sm-5 col-md-3 rounded-3 overflow-hidden" data-aos="fade-up"
+            data-aos-offset="100" data-aos-delay="150" data-aos-duration="900">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaKmxOui-1M2mS-drzHhUI9ldUoHsY53YBoASEpsU_U5U9JgD-o6JU2Q5XPt39IUz__SU&usqp=CAU"
+                class="card-img" alt="..." height="100%">
+            <img src="https://media.istockphoto.com/id/1131352495/photo/veggie-burger.jpg?s=612x612&w=0&k=20&c=CjjrZTqgLiuVmkgyNfFOVklOHB81Ra2aWlckL8CjWV0="
+                class="card-img" alt="..." height="100%">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-3 fw-bold text-light">Burger</h5>
             </div>
         </div>
 
-        <div class="card m-3 col-12 col-sm-5 col-md-4" style="height: 250px;">
+        <div class="card-trend mx-1 my-3 col-4 col-sm-5 col-md-3 rounded-3 overflow-hidden" data-aos="fade-up"
+            data-aos-offset="100" data-aos-delay="5" data-aos-duration="900">
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/140430115517-06-comfort-foods.jpg?q=w_1280,h_720,x_0,y_0,c_fill"
                 class="card-img" alt="..." height="100%">
+            <img src="https://media.istockphoto.com/id/497715739/photo/vegetable-lasagna.jpg?s=612x612&w=0&k=20&c=SHylKSVtYCqptdcWEKGu71vhcTG9tVrSkLdvuEap8H4="
+                class="card-img" alt="..." height="100%">
             <div class="card-img-overlay">
-                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Lasagna</h5>
+                <h5 class="card-title fs-3 fw-bold text-light">Lasagna</h5>
             </div>
         </div>
-        <div class="card m-3 col-12 col-sm-5 col-md-4" style="height: 250px;">
+        <div class="card-trend mx-1 my-3 col-4 col-sm-5 col-md-3 rounded-3 overflow-hidden" data-aos="fade-up"
+            data-aos-offset="100" data-aos-delay="50" data-aos-duration="900">
+            <img src="https://ychef.files.bbci.co.uk/1280x720/p08v90pv.jpg" class="card-img" alt="..." height="100%">
             <img src="https://i.pinimg.com/736x/32/f9/c8/32f9c8b2f02c6c276a7b0d780dccf4bd.jpg" class="card-img"
                 alt="..." height="100%">
             <div class="card-img-overlay">
-                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Dhosa</h5>
+                <h5 class="card-title fs-3 fw-bold text-light">Dhosa</h5>
             </div>
         </div>
-        <div class="card m-3 col-12 col-sm-5 col-md-4" style="height: 250px;">
+        <div class="card-trend mx-1 my-3 col-4 col-sm-5 col-md-3 rounded-3 overflow-hidden" data-aos="fade-up"
+            data-aos-offset="100" data-aos-delay="150" data-aos-duration="900">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdk-XZfe4e6SBhL0Dbdlm4vv_ZYixpNQcVttNiVcyLInaab_MqoSkoAxhX1_ISxI2gYYk&usqp=CAU"
+                class="card-img" alt="..." height="100%">
             <img src="https://i.ytimg.com/vi/xkMbJCtaaqA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDrMLgdijp9TJ92IUYugdtisp2tIw"
                 class="card-img" alt="..." height="100%">
             <div class="card-img-overlay">
-                <h5 class="card-title fs-3 fw-bold text-dark text-shadow">Munchuriam</h5>
+                <h5 class="card-title fs-3 fw-bold text-light">Munchuriam</h5>
+            </div>
+        </div>
+        <div class="card-trend mx-1 my-3 col-4 col-sm-5 col-md-3 rounded-3 overflow-hidden" data-aos="fade-up"
+            data-aos-offset="100" data-aos-delay="5" data-aos-duration="900">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaKmxOui-1M2mS-drzHhUI9ldUoHsY53YBoASEpsU_U5U9JgD-o6JU2Q5XPt39IUz__SU&usqp=CAU"
+                class="card-img" alt="..." height="100%">
+            <img src="https://media.istockphoto.com/id/1131352495/photo/veggie-burger.jpg?s=612x612&w=0&k=20&c=CjjrZTqgLiuVmkgyNfFOVklOHB81Ra2aWlckL8CjWV0="
+                class="card-img" alt="..." height="100%">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-3 fw-bold text-light">Burger</h5>
+            </div>
+        </div>
+
+        <div class="card-trend mx-1 my-3 col-4 col-sm-5 col-md-3 rounded-3 overflow-hidden" data-aos="fade-up"
+            data-aos-offset="100" data-aos-delay="50" data-aos-duration="900">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/140430115517-06-comfort-foods.jpg?q=w_1280,h_720,x_0,y_0,c_fill"
+                class="card-img" alt="..." height="100%">
+            <img src="https://media.istockphoto.com/id/497715739/photo/vegetable-lasagna.jpg?s=612x612&w=0&k=20&c=SHylKSVtYCqptdcWEKGu71vhcTG9tVrSkLdvuEap8H4="
+                class="card-img" alt="..." height="100%">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-3 fw-bold text-light">Lasagna</h5>
+            </div>
+        </div>
+
+        <div class="card-trend mx-1 my-3 col-4 col-sm-5 col-md-3 rounded-3 overflow-hidden" data-aos="fade-up"
+            data-aos-offset="100" data-aos-delay="150" data-aos-duration="900">
+            <img src="https://b.zmtcdn.com/data/pictures/chains/3/19056943/06029b048ef65a9180d3ab70f50c3f19.jpg?fit=around|960:500&crop=960:500;*,*"
+                class="card-img" alt="..." height="100%">
+            <img src="https://b.zmtcdn.com/data/pictures/3/19557913/610581e601b0ced6c56a50f32ddafe59.jpg"
+                class="card-img" alt="..." height="100%">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-3 fw-bold text-light">Pizza</h5>
             </div>
         </div>
 
@@ -163,10 +178,12 @@
 
     <!-- for category section -->
 
-    <h2 class="fw-bold text-center my-5 blog-title">Best Category - We Have Offers</h2>
+    <h2 class="fw-bold text-center my-5 blog-title" data-aos="fade " data-aos-offset="200">Best Category - We Have
+        Offers</h2>
     <div class="d-flex flex-wrap justify-content-evenly">
 
-        <div class="card m-4" style="width: 18rem;height: 24rem;">
+        <div class="card m-4" style="width: 18rem;height: 24rem;" data-aos="fade-up" data-aos-offset="150"
+            data-aos-delay="5" data-aos-duration="900">
             <img src="https://www.allrecipes.com/thmb/aefJMDXKqs42oAP71dQuYf_-Qdc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6776_Pizza-Dough_ddmfs_4x3_1724-fd91f26e0bd6400a9e89c6866336532b.jpg"
                 class="card-img-top" alt="..." height="45%">
             <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
@@ -193,9 +210,8 @@
                 <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
             </div>
         </div>
-
-
-        <div class="card m-4" style="width: 18rem;height: 24rem;">
+        <div class="card m-4" style="width: 18rem;height: 24rem;" data-aos="fade-up" data-aos-offset="150"
+            data-aos-delay="50" data-aos-duration="900">
             <img src="https://www.shutterstock.com/image-photo/burger-tomateoes-lettuce-pickles-on-600nw-2309539129.jpg"
                 class="card-img-top" alt="..." height="45%">
             <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
@@ -222,9 +238,8 @@
                 <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
             </div>
         </div>
-
-
-        <div class="card m-4" style="width: 18rem;height: 24rem;">
+        <div class="card m-4" style="width: 18rem;height: 24rem;" data-aos="fade-up" data-aos-offset="150"
+            data-aos-delay="100" data-aos-duration="900">
             <img src="https://i0.wp.com/taylahskitchen.com/wp-content/uploads/2021/08/SpicyPeanutNoodles-2.jpg?resize=768%2C513&ssl=1"
                 class="card-img-top" alt="..." height="45%">
             <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
@@ -251,9 +266,8 @@
                 <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
             </div>
         </div>
-
-
-        <div class="card m-4" style="width: 18rem;height: 24rem;">
+        <div class="card m-4" style="width: 18rem;height: 24rem;" data-aos="fade-up" data-aos-offset="150"
+            data-aos-delay="150" data-aos-duration="900">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQccMPUXlejQDmILj00XTDqeAS7gyHmxoeJlyVqH8cAt5ABAzcuDYWmGTe8idCGC8oHbDw&usqp=CAU"
                 class="card-img-top" alt="..." height="45%">
             <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
@@ -280,9 +294,8 @@
                 <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
             </div>
         </div>
-
-
-        <div class="card m-4" style="width: 18rem;height: 24rem;">
+        <div class="card m-4" style="width: 18rem;height: 24rem;" data-aos="fade-up" data-aos-offset="150"
+            data-aos-delay="200" data-aos-duration="900">
             <img src="https://i.pinimg.com/736x/32/f9/c8/32f9c8b2f02c6c276a7b0d780dccf4bd.jpg" class="card-img-top"
                 alt="..." height="45%">
             <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
@@ -309,9 +322,8 @@
                 <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
             </div>
         </div>
-
-
-        <div class="card m-4" style="width: 18rem;height: 24rem;">
+        <div class="card m-4" style="width: 18rem;height: 24rem;" data-aos="fade-up" data-aos-offset="150"
+            data-aos-delay="250" data-aos-duration="900">
             <img src="https://i.ytimg.com/vi/xkMbJCtaaqA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDrMLgdijp9TJ92IUYugdtisp2tIw"
                 class="card-img-top" alt="..." height="45%">
             <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
@@ -338,9 +350,8 @@
                 <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
             </div>
         </div>
-
-
-        <div class="card m-4" style="width: 18rem;height: 24rem;">
+        <div class="card m-4" style="width: 18rem;height: 24rem;" data-aos="fade-up" data-aos-offset="150"
+            data-aos-delay="300" data-aos-duration="900">
             <img src="https://www.allrecipes.com/thmb/aefJMDXKqs42oAP71dQuYf_-Qdc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6776_Pizza-Dough_ddmfs_4x3_1724-fd91f26e0bd6400a9e89c6866336532b.jpg"
                 class="card-img-top" alt="..." height="45%">
             <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
@@ -367,9 +378,8 @@
                 <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
             </div>
         </div>
-
-
-        <div class="card m-4" style="width: 18rem;height: 24rem;">
+        <div class="card m-4" style="width: 18rem;height: 24rem;" data-aos="fade-up" data-aos-offset="150"
+            data-aos-delay="350" data-aos-duration="900">
             <img src="https://www.shutterstock.com/image-photo/burger-tomateoes-lettuce-pickles-on-600nw-2309539129.jpg"
                 class="card-img-top" alt="..." height="45%">
             <div class="card-body d-flex flex-column gap-1" style="height: 55%;">
@@ -396,68 +406,73 @@
                 <a href="#" class="btn btn-warning fw-bold">Buy Now !</a>
             </div>
         </div>
-
-
-
     </div>
 
 
-    <h2 class="text-center fw-bold blog-title my-5">Delicious Food Blog</h2>
+    <h2 class="text-center fw-bold blog-title my-5" data-aos="fade " data-aos-offset="170" data-aos-duration="900">
+        Delicious Food Blog</h2>
     <div class="container py-1">
-        
+
         <div class="row mt-4">
             <!-- Featured Blog Post -->
-            <div class="col-lg-8">
+            <div class="col-lg-8" data-aos="fade-right" data-aos-offset="200" data-aos-duration="800">
                 <div class="blog-card">
-                    <img src="https://www.obis360.com/wp-content/uploads/2020/09/Yard-Sale-1080x675.png" class="img-fluid blog-img card-img-top" alt="Food">
+                    <img src="https://www.obis360.com/wp-content/uploads/2020/09/Yard-Sale-1080x675.png"
+                        class="img-fluid blog-img card-img-top" alt="Food">
                     <h3 class="mt-3">The Secret to a Perfect Pizza</h3>
                     <p>Discover the best techniques for making a delicious homemade pizza with fresh ingredients.</p>
                     <a href="#" class="btn btn-warning">Read More</a>
                 </div>
             </div>
-            
+
             <!-- Trending Section -->
-            <div class="col-lg-4 my-4">
+            <div class="col-lg-4 my-4" data-aos="fade-up" data-aos-offset="200" data-aos-duration="800">
                 <h4 class="blog-title">Trending</h4>
-                <ul class="list-group mb-4">
-                    <a href="" class="list-group-item ">Top 10 Street Foods to Try</a>
-                    <a href="" class="list-group-item ">The Benefits of a Vegan Diet</a>
-                    <a href="" class="list-group-item ">Best Coffee Shops Around the World</a>
-                    <a href="" class="list-group-item ">How to Make the Perfect Smoothie</a>
+                <ul class="list-group list-hover mb-4">
+                    <a href="" class="list-group-item list-group-item-action">Top 10 Street Foods to Try</a>
+                    <a href="" class="list-group-item list-group-item-action">The Benefits of a Vegan Diet</a>
+                    <a href="" class="list-group-item list-group-item-action">Best Coffee Shops Around the World</a>
+                    <a href="" class="list-group-item list-group-item-action">How to Make the Perfect Smoothie</a>
                 </ul>
                 <h4 class="blog-title">Best Items</h4>
                 <ul class="list-group">
-                    <a href="" class="list-group-item">Burgers</a>
-                    <a href="" class="list-group-item">Pizza</a>
-                    <a href="" class="list-group-item">Pasta</a>
-                    <a href="" class="list-group-item">Manchuriyam</a>
-                    <a href="" class="list-group-item">Dhosa</a>
-                    <a href="" class="list-group-item">Noodles</a>
-                    <a href="" class="list-group-item">Sandwiche</a>
+                    <a href="" class="list-group-item list-group-item-action">Burgers</a>
+                    <a href="" class="list-group-item list-group-item-action">Pizza</a>
+                    <a href="" class="list-group-item list-group-item-action">Pasta</a>
+                    <a href="" class="list-group-item list-group-item-action">Manchuriyam</a>
+                    <a href="" class="list-group-item list-group-item-action">Dhosa</a>
+                    <a href="" class="list-group-item list-group-item-action">Noodles</a>
+                    <a href="" class="list-group-item list-group-item-action">Sandwiche</a>
                 </ul>
             </div>
-           
-        </div> 
+
+        </div>
 
         <!-- Grid Blog Posts -->
         <div class="row mt-4">
-            <div class="col-md-4 my-3">
+            <div class="col-md-4 my-3" data-aos="fade-up" data-aos-offset="150" data-aos-duration="900"
+                data-aos-delay="50">
                 <div class="blog-card">
-                    <img src="https://img.freepik.com/premium-photo/ai-generated-ai-generative-chocolate-pie-cake-desert-bown-bake-sugar-sweet-organic-food-evening-party-birthday-background-graphic-art_95211-21098.jpg" class="img-fluid blog-img card-img-top" alt="Dessert">
+                    <img src="https://img.freepik.com/premium-photo/ai-generated-ai-generative-chocolate-pie-cake-desert-bown-bake-sugar-sweet-organic-food-evening-party-birthday-background-graphic-art_95211-21098.jpg"
+                        class="img-fluid blog-img card-img-top" alt="Dessert">
                     <h4 class="mt-2">Dessert Delights</h4>
                     <p>Explore mouth-watering desserts from around the world.</p>
                 </div>
             </div>
-            <div class="col-md-4 my-3">
+            <div class="col-md-4 my-3" data-aos="fade-up" data-aos-offset="150" data-aos-duration="900"
+                data-aos-delay="150">
                 <div class="blog-card">
-                    <img src="https://townsquare.media/site/701/files/2023/04/attachment-Untitled-design-31.jpg?w=780&q=75" class="img-fluid blog-img card-img-top" alt="Burger">
+                    <img src="https://townsquare.media/site/701/files/2023/04/attachment-Untitled-design-31.jpg?w=780&q=75"
+                        class="img-fluid blog-img card-img-top" alt="Burger">
                     <h4 class="mt-2">Best Burgers</h4>
                     <p>Discover the juiciest burgers you must try!</p>
                 </div>
             </div>
-            <div class="col-md-4 my-3">
+            <div class="col-md-4 my-3" data-aos="fade-up" data-aos-offset="150" data-aos-duration="900"
+                data-aos-delay="250">
                 <div class="blog-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKlmczlGU4_zJLLG5znp_2n95i8OaIRKJ-A&s" class="img-fluid blog-img card-img-top" alt="Pasta">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKlmczlGU4_zJLLG5znp_2n95i8OaIRKJ-A&s"
+                        class="img-fluid blog-img card-img-top" alt="Pasta">
                     <h4 class="mt-2">Pasta Perfection</h4>
                     <p>Learn how to make restaurant-quality pasta at home.</p>
                 </div>
@@ -465,10 +480,12 @@
         </div>
     </div>
 
+    <!-- for blog section row 3 -->
     <div class="row p-lg-5 p-md-3 p-1">
         <div class="card-group">
 
-            <div class="card border-warning my-4">
+            <div class="card border-warning my-4" data-aos="fade-up" data-aos-offset="300" data-aos-duration="900"
+                data-aos-delay="100">
                 <img class="card-img-top"
                     src="https://i.ytimg.com/vi/-yqgxNuz9Fo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLByrMzi7iIAF65zE2D2fyuuzgSWMA"
                     alt="Gujarati thali">
@@ -481,7 +498,8 @@
                 </div>
             </div>
 
-            <div class="card border-warning my-4">
+            <div class="card border-warning my-4" data-aos="fade-up" data-aos-offset="300" data-aos-duration="900"
+                data-aos-delay="150">
                 <img class="card-img-top"
                     src="https://img.freepik.com/free-photo/juicy-cheeseburger-rustic-wooden-board_9975-24623.jpg"
                     alt="Card image cap">
@@ -493,7 +511,8 @@
                     <p class="card-text"><small class="text-muted">Last updated 55 mins ago</small></p>
                 </div>
             </div>
-            <div class="card border-warning my-4">
+            <div class="card border-warning my-4" data-aos="fade-up" data-aos-offset="300" data-aos-duration="900"
+                data-aos-delay="200">
                 <img class="card-img-top"
                     src="https://static.toiimg.com/thumb/msid-102266573,width-1280,height-720,imgsize-97558,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"
                     alt="Pizza">
@@ -507,19 +526,24 @@
             </div>
         </div>
     </div>
-    <h2 class="fw-bold text-center my-3 blog-title">Our Best Reviews</h2>
+
+
+    <!-- testimonial  -->
+    <h2 class="fw-bold text-center my-3 blog-title" data-aos="fade" data-aos-offset="200" data-aos-duration="1000">Our
+        Best Reviews</h2>
 
     <div class="row p-lg-5 p-md-3 p-0">
-        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 280px;">
+        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 220px;" data-aos="fade-up" data-aos-offset="200"
+            data-aos-duration="900" data-aos-delay="50">
 
             <div class="box-1 rounded shadow  height d-flex overflow-hidden">
                 <div class="col-4 d-flex justify-content-center overflow-hidden">
-                    <img src="https://static.vecteezy.com/system/resources/previews/024/354/252/non_2x/businessman-isolated-illustration-ai-generative-free-photo.jpg"
+                    <img src="https://www.healthcareradius.in/cloud/2021/11/15/Rajesh-Paterl,-CEO---IVD-India,-Trivitron-Healthcare.jpg"
                         alt="photo" width="auto" height="100%">
                 </div>
                 <div class="col-8 ps-4 ">
-                    <h2>Yax Jethava</h2>
-                    <p class="m-0">Software Enginner</p>
+                    <h2>Rajesh Patel</h2>
+                    <p class="m-0">Hotel Manager</p>
                     <div class="col-12">
                         <div class="star mb-3 text-warning">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -549,25 +573,23 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem sed esse
-                        cum ab fugit
-                        ipsam,
-                        quaerat quas facere a molestiae! Laudantium doloribus sunt id ut corporis molestias minima
-                        consequuntur dolor?</p>
+                    <p class="text-secondary">"The authentic taste of Gujarati thali here is simply unbeatable! The
+                        flavors remind me of home-cooked meals. Truly a delight!</p>
                 </div>
             </div>
 
         </div>
-        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 280px;">
+        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 220px;" data-aos="fade-up" data-aos-offset="200"
+            data-aos-duration="900" data-aos-delay="50">
 
             <div class="box-1 rounded shadow  height d-flex overflow-hidden">
                 <div class="col-4 d-flex justify-content-center overflow-hidden">
-                    <img src="https://img.freepik.com/premium-photo/handsome-confident-blond-bearded-businessman-with-hands-pockets-smiling-joyfully-give-professional-vibe-discussing-business-double-his-income-become-successful-white-background_1258-5820.jpg?w=996"
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN6-SfyWdkOQ8pZePRgvLuZHjVj44fSkN-nzWCPyaNLKKhrRQG-AGD_X4fKFCVStUsI4Y&usqp=CAU"
                         alt="photo" width="auto" height="100%">
                 </div>
                 <div class="col-8 ps-4 ">
-                    <h2>Parth Solanki</h2>
-                    <p class="m-0">PHP Enginner</p>
+                    <h2>Meera Shah</h2>
+                    <p class="m-0">Food Blogger</p>
                     <div class="col-12">
                         <div class="star mb-3 text-warning">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -597,25 +619,23 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem sed esse
-                        cum ab fugit
-                        ipsam,
-                        quaerat quas facere a molestiae! Laudantium doloribus sunt id ut corporis molestias minima
-                        consequuntur dolor?</p>
+                    <p class="text-secondary">From the crispy Fafda to the soft, sweet Mohanthal, every bite is a burst
+                        of Gujarati tradition. Highly recommended!</p>
                 </div>
             </div>
 
         </div>
-        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 280px;">
+        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 220px;" data-aos="fade-up" data-aos-offset="200"
+            data-aos-duration="900" data-aos-delay="50">
 
             <div class="box-1 rounded shadow  height d-flex overflow-hidden">
                 <div class="col-4 d-flex justify-content-center overflow-hidden">
-                    <img src="https://media.istockphoto.com/id/1399565382/photo/young-happy-mixed-race-businessman-standing-with-his-arms-crossed-working-alone-in-an-office.jpg?s=2048x2048&w=is&k=20&c=YmjrR4r6G_4XUliPPK3PPLHrkqKLvSY2D3ZEQewLZ38="
+                    <img src="https://dims.healthgrades.com/dims3/MMH/6456581/2147483647/strip/true/crop/240x320+0+0/resize/240x320!/quality/75/?url=https%3A%2F%2Fucmscdn.healthgrades.com%2Fde%2Fa4%2F76c8dc0a43398b479b673e3bd527%2Fxyn7jnb-dr-vivek-desai-cropped.jpg"
                         alt="photo" width="auto" height="100%">
                 </div>
                 <div class="col-8 ps-4 ">
-                    <h2>Raju M.</h2>
-                    <p class="m-0">Backend Enginner</p>
+                    <h2>Vivek Gosai</h2>
+                    <p class="m-0">Businessman</p>
                     <div class="col-12">
                         <div class="star mb-3 text-warning">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -645,25 +665,23 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem sed esse
-                        cum ab fugit
-                        ipsam,
-                        quaerat quas facere a molestiae! Laudantium doloribus sunt id ut corporis molestias minima
-                        consequuntur dolor?</p>
+                    <p class="text-secondary">The Dhokla was perfectly fluffy, and the Undhiyu had the right blend of
+                        spices. A must-visit for Gujarati food lovers!</p>
                 </div>
             </div>
 
         </div>
-        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 280px;">
+        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 220px;" data-aos="fade-up" data-aos-offset="200"
+            data-aos-duration="900" data-aos-delay="50">
 
             <div class="box-1 rounded shadow  height d-flex overflow-hidden">
                 <div class="col-4 d-flex justify-content-center overflow-hidden">
-                    <img src="https://img.freepik.com/premium-photo/handsome-confident-blond-bearded-businessman-with-hands-pockets-smiling-joyfully-give-professional-vibe-discussing-business-double-his-income-become-successful-white-background_1258-5820.jpg?w=996"
+                    <img src="https://c.ndtvimg.com/2023-08/r5mifhb_home-chef_625x300_03_August_23.jpg?im=FeatureCrop,algorithm=dnn,width=384,height=384"
                         alt="photo" width="auto" height="100%">
                 </div>
                 <div class="col-8 ps-4 ">
-                    <h2>Parth Solanki</h2>
-                    <p class="m-0">PHP Enginner</p>
+                    <h2>Pooja Trivedi</h2>
+                    <p class="m-0">Homemaker</p>
                     <div class="col-12">
                         <div class="star mb-3 text-warning">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -693,25 +711,23 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem sed esse
-                        cum ab fugit
-                        ipsam,
-                        quaerat quas facere a molestiae! Laudantium doloribus sunt id ut corporis molestias minima
-                        consequuntur dolor?</p>
+                    <p class="text-secondary">Tasted the best Gujarati Kadhi here! The balance of sweet and tangy
+                        flavors was just perfect. Feels like home!</p>
                 </div>
             </div>
 
         </div>
-        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 280px;">
+        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 220px;" data-aos="fade-up" data-aos-offset="200"
+            data-aos-duration="900" data-aos-delay="50">
 
             <div class="box-1 rounded shadow  height d-flex overflow-hidden">
                 <div class="col-4 d-flex justify-content-center overflow-hidden">
-                    <img src="https://media.istockphoto.com/id/1399565382/photo/young-happy-mixed-race-businessman-standing-with-his-arms-crossed-working-alone-in-an-office.jpg?s=2048x2048&w=is&k=20&c=YmjrR4r6G_4XUliPPK3PPLHrkqKLvSY2D3ZEQewLZ38="
+                    <img src="https://storage.googleapis.com/tblv3_bucket_us/guides/27/27466/201832211022675.jpg"
                         alt="photo" width="auto" height="100%">
                 </div>
                 <div class="col-8 ps-4 ">
-                    <h2>Raju M.</h2>
-                    <p class="m-0">Backend Enginner</p>
+                    <h2>Anil Joshi</h2>
+                    <p class="m-0">Tour Guide</p>
                     <div class="col-12">
                         <div class="star mb-3 text-warning">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -741,25 +757,23 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem sed esse
-                        cum ab fugit
-                        ipsam,
-                        quaerat quas facere a molestiae! Laudantium doloribus sunt id ut corporis molestias minima
-                        consequuntur dolor?</p>
+                    <p class="text-secondary">If you want to experience authentic Gujarati cuisine, this is the place!
+                        Loved the Thepla with Chhundo!</p>
                 </div>
             </div>
 
         </div>
-        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 280px;">
+        <div class="col-lg-4 col-12 col-md-6 my-4 " style="height: 220px;" data-aos="fade-up" data-aos-offset="200"
+            data-aos-duration="900" data-aos-delay="50">
 
             <div class="box-1 rounded shadow  height d-flex overflow-hidden">
                 <div class="col-4 d-flex justify-content-center overflow-hidden">
-                    <img src="https://static.vecteezy.com/system/resources/previews/024/354/252/non_2x/businessman-isolated-illustration-ai-generative-free-photo.jpg"
-                        alt="photo" width="auto" height="100%">
+                    <img src="https://www.spicecircuit.com/wp-content/uploads/2018/05/kanthi.jpg" alt="photo"
+                        width="auto" height="100%">
                 </div>
                 <div class="col-8 ps-4 ">
-                    <h2>Yax Jethava</h2>
-                    <p class="m-0">Software Enginner</p>
+                    <h2>Kiran Mehta</h2>
+                    <p class="m-0">Chef</p>
                     <div class="col-12">
                         <div class="star mb-3 text-warning">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -789,11 +803,8 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem sed esse
-                        cum ab fugit
-                        ipsam,
-                        quaerat quas facere a molestiae! Laudantium doloribus sunt id ut corporis molestias minima
-                        consequuntur dolor?</p>
+                    <p class="text-secondary">Tried their Handvo and was amazed by the taste. Authentic, fresh, and full
+                        of flavor!</p>
                 </div>
             </div>
 
@@ -801,10 +812,14 @@
 
 
     </div>
-    <!-- for f&q section -->
-    <h2 class="fw-bold text-center my-3 blog-title">Frequently asked questions</h2>
 
-    <div class="accordion accordion-flush mx-auto my-5" id="accordionFlushExample" style="width: 80%;">
+
+    <!-- for f&q section -->
+    <h2 class="fw-bold text-center my-3 blog-title" data-aos="fade" data-aos-offset="200" data-aos-duration="1000">
+        Frequently asked questions</h2>
+
+    <div class="accordion accordion-flush mx-auto my-5" id="accordionFlushExample" style="width: 80%;"
+        data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000">
 
         <div class="accordion-item">
             <h2 class="accordion-header">
@@ -849,11 +864,11 @@
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
                     How will my order be delivered?
                 </button>
             </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">Courier companies offering the best services are roped in to deliver your
                     products safely.</div>
             </div>
@@ -862,11 +877,11 @@
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseThree">
                     Are only native snacks and sweets dealt with?
                 </button>
             </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">No. All snacks and sweets that are not only native but those which have a
                     unique taste from a particular place are also brought in our fold.</div>
             </div>
@@ -876,9 +891,9 @@
 
 
     <!-- Remove the container if you want to extend the Footer to full width. -->
-    <div class="container m-0 w-100" style="max-width: 100% !important;background-color: #23242a;">
+    <div class="container m-0 w-100" style="padding:0 !important;max-width: 100% !important;background-color: #23242a;">
 
-        <footer class="text-white text-center text-lg-start" >
+        <footer class="text-white text-center text-lg-start">
             <!-- Grid container -->
             <div class="container p-4">
                 <!--Grid row-->
@@ -888,28 +903,30 @@
                         <h5 class="text-uppercase mb-4">About company</h5>
 
                         <p>
-                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                            voluptatum deleniti atque corrupti.
+                            We bring you a delightful culinary experience with the finest
+                            ingredients and mouthwatering flavors.
                         </p>
 
                         <p>
-                            Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
-                            molestias.
+                            Whether you're craving authentic traditional dishes
+                            or modern fusion delights, our chefs craft every meal with passion and precision.
                         </p>
 
-                        <div class="mt-4">
+                        <div class="social-link my-4 gap-2 d-flex">
                             <!-- Facebook -->
-                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
+                            <a type="button" class="btn btn-floating btn-warning btn"><i
                                     class="fab fa-facebook-f"></i></a>
                             <!-- Dribbble -->
-                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
-                                    class="fab fa-dribbble"></i></a>
+                            <a type="button" class="btn btn-floating btn-warning btn">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
                             <!-- Twitter -->
-                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
-                                    class="fab fa-twitter"></i></a>
+                            <a type="button" class="btn btn-floating btn-warning btn">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
                             <!-- Google + -->
-                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
-                                    class="fab fa-google-plus-g"></i></a>
+                            <a type="button" class="btn btn-floating btn-warning btn">
+                                <i class="fa-brands fa-whatsapp"></i></a>
                             <!-- Linkedin -->
                         </div>
                     </div>
@@ -917,34 +934,23 @@
 
                     <!--Grid column-->
                     <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
-
-                        <div class="form-outline form-white mb-4">
-                            <input type="text" id="formControlLg" class="form-control form-control-lg">
-                            <label class="form-label" for="formControlLg" style="margin-left: 0px;">Search</label>
-                            <div class="form-notch">
-                                <div class="form-notch-leading" style="width: 9px;"></div>
-                                <div class="form-notch-middle" style="width: 48.8px;"></div>
-                                <div class="form-notch-trailing"></div>
-                            </div>
-                        </div>
 
                         <ul class="fa-ul" style="margin-left: 1.65em;">
                             <li class="mb-3">
-                                <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY
-                                    10012, US</span>
+                                <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">
+                                    Near moti chowk, Mandi, Rajkot</span>
                             </li>
                             <li class="mb-3">
                                 <span class="fa-li"><i class="fas fa-envelope"></i></span><span
-                                    class="ms-2">info@example.com</span>
+                                    class="ms-2">foodadd@gmail.com</span>
                             </li>
                             <li class="mb-3">
-                                <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567
-                                    88</span>
+                                <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">
+                                    + 91 12345 67890</span>
                             </li>
                             <li class="mb-3">
-                                <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 01 234 567
-                                    89</span>
+                                <span class="fa-li"></span><span class="ms-2">
+                                    + 91 23456 78901</span>
                             </li>
                         </ul>
                     </div>
@@ -979,18 +985,17 @@
 
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2025 Copyright: X.X
+                Food Address | © 2025 Copyright
             </div>
             <!-- Copyright -->
         </footer>
 
     </div>
     <!-- End of .container -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
-
 </html>
